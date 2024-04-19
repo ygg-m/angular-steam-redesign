@@ -1,0 +1,85 @@
+<div class="flex justify-between items-center max-w-screen-2xl w-full">
+  <!-- Left Part -->
+  <div class="flex">
+    <div class="flex gap-4">
+      <!-- Navigate Buttons -->
+      <div class="flex text-txt-dim duration-200 items-center justify-center">
+        <button class="w-8 h-8 hover:text-txt duration-200">
+          <svg-chevron class="" />
+        </button>
+        <button class="w-8 h-8 hover:text-txt duration-200 rotate-180">
+          <svg-chevron class="" />
+        </button>
+      </div>
+      <!-- Steam Logo -->
+      <a href="#" class="flex gap-2 items-center justify-center">
+        <app-steam-icon class="w-[20px]" />
+        <app-steam-font class="w-[59px]" />
+      </a>
+    </div>
+    <!-- Menu Buttons -->
+    <div
+      class="flex gap-16 pl-16 uppercase font-medium items-center justify-center"
+    >
+      <a href="#" class="text-primary">Store</a>
+      <a href="#">Community</a>
+      <a href="#">Ygg</a>
+      <a href="#">Library</a>
+      <a href="#">Downloads</a>
+    </div>
+  </div>
+
+  <!-- Right Part -->
+  <div class="flex gap-2">
+    <!-- Friends -->
+    <app-btn-sm>
+      <svg-people class="w-5 h-5 px-2 box-content" />
+    </app-btn-sm>
+
+    <!-- Notifications -->
+    <app-btn-sm class="relative">
+      <div
+        class="absolute -top-1 -right-1 rounded-full bg-primary px-[4px] text-bg font-medium flex items-center justify-center text-xs"
+      >
+        2
+      </div>
+      <svg-notification class="w-5 h-5 px-2 box-content" />
+    </app-btn-sm>
+    <!-- Profile -->
+    <app-btn-sm>
+      <img
+        src="https://pbs.twimg.com/profile_images/1774980059800956928/ssqG7x5k_400x400.jpg"
+        alt="Profile Picture"
+        class="w-8 h-8 box-content rounded"
+      />
+      <span class="text-txt">YggProfile</span>
+      <span>$12.45</span>
+      <span class="w-5 -rotate-90 text-txt"><svg-chevron /></span>
+    </app-btn-sm>
+
+    <!-- Help / View Buttons -->
+    <div class="pl-8 flex items-center justify-center">
+      <button class="text-txt-dim duration-200 hover:text-txt h-full px-2">
+        Help
+      </button>
+      <button
+        class="text-txt-dim duration-200 hover:text-txt h-full px-4 flex gap-1 items-center justify-center"
+      >
+        View
+        <span class="w-5 -rotate-90"><svg-chevron /></span>
+      </button>
+    </div>
+    <!-- Window Buttons -->
+    <div class="flex items-center justify-center">
+      <button class="w-6 px-2 box-content text-txt-dim hover:text-txt duration-200">
+        <svg-minimize />
+      </button>
+      <button class="w-6 px-2 box-content text-txt-dim hover:text-txt duration-200">
+        <svg-window />
+      </button>
+      <button class="w-6 px-2 box-content text-txt-dim hover:text-acc-red duration-200">
+        <svg-cross />
+      </button>
+    </div>
+  </div>
+</div>
