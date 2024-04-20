@@ -15,12 +15,13 @@ module.exports = {
       ],
     },
     colors: {
+      transparent: "rgba(0, 0, 0, 0)",
       txt: { DEFAULT: "#F3F3F3", dim: "#76808C" },
       bg: {
         DEFAULT: "#0E141B",
         high: "#1E2329",
         hover: "#313843",
-        secondary: "#14344B",
+        secondary: "#4B619B",
         tertiary: "#212B45",
       },
       primary: "#66C0F4",

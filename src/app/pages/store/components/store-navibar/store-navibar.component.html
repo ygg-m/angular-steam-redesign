@@ -1,0 +1,41 @@
+<div class="max-w-screen-2xl w-full flex items-center justify-between gap-2">
+  <!-- Menu -->
+  <div class="flex gap-2">
+    <app-store-navibar-btn class="bg-secondary rounded"
+      >Home</app-store-navibar-btn
+    >
+    <app-store-navibar-btn>Browse</app-store-navibar-btn>
+    <app-store-navibar-btn>Discover</app-store-navibar-btn>
+    <app-store-navibar-btn>Points Shop</app-store-navibar-btn>
+    <app-store-navibar-btn>Curators</app-store-navibar-btn>
+    <app-store-navibar-btn>Gift Card</app-store-navibar-btn>
+    <app-store-navibar-btn>News</app-store-navibar-btn>
+  </div>
+
+  <!-- Search -->
+  <div
+    class="flex bg-bg bg-opacity-20 rounded h-full w-full max-w-md overflow-hidden"
+  >
+    <input
+      type="text"
+      title="Search"
+      placeholder="Search"
+      class="pl-4 h-full flex-grow bg-transparent placeholder-secondary"
+    />
+    <button class="w-6 text-secondary px-4 box-content">
+      <svg-search />
+    </button>
+  </div>
+
+  <!-- Right -->
+  <div class="flex gap-2">
+    <!-- Wishlist -->
+    <app-store-navibar-btn>Wishlist</app-store-navibar-btn>
+    <app-store-navibar-btn>Cart</app-store-navibar-btn>
+    <button
+      class="bg-txt-dim bg-opacity-10 w-6 h-6 box-content p-2 text-txt-dim hover:text-txt duration-200 rounded"
+    >
+      <svg-settings />
+    </button>
+  </div>
+</div>

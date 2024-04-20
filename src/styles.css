@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  animation-duration: 200ms;
-}
-
 html {
   overflow-x: hidden;
 }
@@ -23,6 +17,27 @@ body {
 
 body > .w-full > * {
   width: 100%;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.hover-highlight.relative::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0);
+  transition-duration: 200ms;
+}
+
+.hover-highlight.relative:hover::after {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition-duration: 200ms;
 }
 
 .bg-store {
