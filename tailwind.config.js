@@ -26,7 +26,7 @@ module.exports = {
       },
       primary: "#66C0F4",
       secondary: "#4B619B",
-      "acc-green": "A1CD44",
+      "acc-green": "#A1CD44",
       "acc-red": "#CD5444",
       "acc-yellow": "#C1B15F",
     },

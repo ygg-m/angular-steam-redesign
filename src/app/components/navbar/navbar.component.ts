@@ -8,6 +8,7 @@ import { SvgSteamFont } from '../../../assets/steam-font.component';
 import { SvgSteamIcon } from '../../../assets/steam-icon.component';
 import { SvgWindow } from '../../../assets/window.component';
 import { BtnSmComponent } from '../btn-sm/btn-sm.component';
+import { BtnPageComponent } from './btn-page/btn-page.component';
 
 @Component({
   selector: 'app-navbar',
@@ -22,6 +23,7 @@ import { BtnSmComponent } from '../btn-sm/btn-sm.component';
     SvgCross,
     SvgMinimize,
     SvgWindow,
+    BtnPageComponent,
   ],
   templateUrl: './navbar.component.html',
 })

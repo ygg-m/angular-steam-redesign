@@ -1,0 +1,62 @@
+<div class="bg-bg p-4 w-full flex lg:flex-row flex-col gap-4 items-center">
+  <!-- Main Image -->
+  <div class="h-[458px] lg:w-7/12 w-full">
+    <img [src]="mainImageUrl" alt="" class="object-cover w-full h-full" />
+  </div>
+
+  <!-- Game Info -->
+  <div class="lg:w-5/12 flex flex-col gap-4">
+    <!-- Title -->
+    <h2 class="text-2xl font-medium">{{ data.store_name }}</h2>
+
+    <!-- Summary -->
+    <p class="max-h-12">
+      {{ data.description | truncate : 130 }}
+    </p>
+
+    <!-- ScreenShots -->
+    <div class="grid grid-cols-2">
+      <app-screenshot
+        *ngFor="let screenshotUrl of data.Assets.screenshots; let i = index"
+        [url]="screenshotUrl"
+        (mouseenter)="setMainImage(screenshotUrl)"
+        (click)="setMainImage(screenshotUrl)"
+        (mouseleave)="resetMainImage()"
+        [ngClass]="getClassForIndex(i)"
+      />
+    </div>
+
+    <!-- Tags / Platform-->
+    <div class="flex justify-between items-center">
+      <!-- Tags -->
+      <div class="flex gap-1">
+        <app-btn-tag *ngFor="let tag of data.store_genres">
+          {{ tag }}
+        </app-btn-tag>
+        <button
+          class="text-txt-dim bg-bg-high p-2 hover:bg-bg-hover hover:text-txt duration-200 rounded"
+        >
+          <svg-add />
+        </button>
+      </div>
+
+      <!-- Platform -->
+      <div class="flex h-full items-center text-txt-dim"><svg-windows8 /></div>
+    </div>
+
+    <!-- Wishlist / Price -->
+    <div class="flex justify-between">
+      <app-wishlist-btn />
+      <div class="flex gap-4 items-center">
+        <div>
+          <p class="text-lg font-medium">$ {{ data.current_price }}</p>
+        </div>
+        <button
+          class="rounded bg-secondary p-2 px-8 text-lg hover:bg-acc-green duration-200 hover:text-bg"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

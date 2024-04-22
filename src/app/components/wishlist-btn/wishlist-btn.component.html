@@ -1,0 +1,9 @@
+<button
+  (mouseenter)="toggleIcon(true)"
+  (mouseleave)="toggleIcon(false)"
+  class="flex gap-2 p-2 px-4 bg-bg-high hover:bg-bg-hover duration-200 rounded"
+>
+  {{ icon ? "" : "Whishlist" }}
+  <svg-favorite-border *ngIf="!fillIcon" />
+  <svg-favorite *ngIf="fillIcon" />
+</button>

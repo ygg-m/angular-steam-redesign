@@ -1,0 +1,54 @@
+<div class="w-full flex flex-col gap-8">
+  <h3 class="text-lg uppercase font-medium">Featured</h3>
+  <!-- Caroussel -->
+  <div
+    class="flex w-full"
+    (mouseenter)="pauseCountdown()"
+    (mouseleave)="pauseCountdown()"
+  >
+    <!-- Arrow Back -->
+    <button
+      class="w-12 text-txt-dim hover:text-txt duration-200 flex justify-center items-center"
+      title="Previous Slide"
+      (click)="changeSlide('prev')"
+    >
+      <p class="w-8"><svg-chevron /></p>
+    </button>
+
+    <!-- Content -->
+    <ng-container *ngFor="let slide of slides; let i = index">
+      <app-game
+        class="w-full"
+        [class]="{
+          'fade-in': fadeIn,
+          hidden: i !== currentSlideIndex
+        }"
+        [data]="slide"
+      />
+    </ng-container>
+
+    <!-- Arrow Foward -->
+    <button
+      class="w-12 rotate-180 text-txt-dim hover:text-txt duration-200"
+      title="Next Slide"
+      (click)="changeSlide('next')"
+    >
+      <p class="w-8"><svg-chevron /></p>
+    </button>
+  </div>
+
+  <!-- Navigator -->
+  <div class="flex w-full items-center justify-center gap-2">
+    <ng-container *ngFor="let slide of slides; let i = index">
+      <button
+        class="w-6 h-2 bg-bg rounded-full relative overflow-hidden"
+        (click)="changeSlide(i)"
+      >
+        <div
+          class="absolute top-0 left-0 h-full bg-secondary"
+          style="width: {{ progress }}%"
+          [hidden]="i !== currentSlideIndex"
+        ></div></button
+    ></ng-container>
+  </div>
+</div>
