@@ -1,0 +1,24 @@
+<div class="bg-bg p-3 rounded flex flex-col gap-4 md:max-w-sm">
+  <!-- Image -->
+  <div class="rounded overflow-hidden">
+    <img [src]="data.web_assets.capsule_616x353" [alt]="data.store_name" />
+  </div>
+
+  <!-- Title -->
+  <h3 class="text-xl font-medium h-14">{{ data.store_name }}</h3>
+
+  <div class="flex justify-between">
+    <!-- Platform -->
+    <div class="flex items-center text-txt-dim">
+      <svg-windows8 class="w-5 h-5" />
+    </div>
+
+    <div class="flex gap-4 items-center">
+      <!-- Price -->
+      <app-price-btn-sm [data]="data" />
+
+      <!-- Wishlist -->
+      <app-wishlist-btn [icon]="true" />
+    </div>
+  </div>
+</div>

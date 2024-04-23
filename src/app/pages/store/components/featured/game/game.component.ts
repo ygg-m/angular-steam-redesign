@@ -6,8 +6,8 @@ import { PriceBtnComponent } from '../../../../../components/price-btn/price-btn
 import { WishlistBtnComponent } from '../../../../../components/wishlist-btn/wishlist-btn.component';
 import { TruncatePipe } from '../../../../../pipes/truncate.pipe';
 import { GameInitializer, GameTypes } from '../../../../../types/game';
-import { BtnTagComponent } from '../btn-tag/btn-tag.component';
-import { ScreenshotComponent } from '../screenshot/screenshot.component';
+import { TagBtnComponent } from '../tag-btn/tag-btn.component';
+import { SshotComponent } from '../sshot/sshot.component';
 
 @Component({
   selector: 'app-game',
@@ -15,8 +15,8 @@ import { ScreenshotComponent } from '../screenshot/screenshot.component';
   imports: [
     SvgAdd,
     SvgWindows8,
-    BtnTagComponent,
-    ScreenshotComponent,
+    TagBtnComponent,
+    SshotComponent,
     WishlistBtnComponent,
     CommonModule,
     TruncatePipe,
@@ -26,7 +26,6 @@ import { ScreenshotComponent } from '../screenshot/screenshot.component';
 })
 export class GameComponent implements OnInit {
   @Input() data: GameTypes = GameInitializer;
-
   mainImageUrl: string = this.data.web_assets.capsule_616x353;
 
   ngOnInit(): void {

@@ -18,7 +18,7 @@
 
     <!-- ScreenShots -->
     <div class="grid grid-cols-2">
-      <app-screenshot
+      <app-sshot
         *ngFor="let screenshotUrl of data.Assets.screenshots; let i = index"
         [url]="screenshotUrl"
         (mouseenter)="setMainImage(screenshotUrl)"
@@ -32,9 +32,9 @@
     <div class="flex justify-between items-center">
       <!-- Tags -->
       <div class="flex gap-1">
-        <app-btn-tag *ngFor="let tag of data.store_genres">
+        <app-tag-btn *ngFor="let tag of data.store_genres.slice(0, 3)">
           {{ tag }}
-        </app-btn-tag>
+        </app-tag-btn>
         <button
           class="text-txt-dim bg-bg-high p-2 hover:bg-bg-hover hover:text-txt duration-200 rounded"
         >
@@ -43,16 +43,18 @@
       </div>
 
       <!-- Platform -->
-      <div class="flex h-full items-center text-txt-dim"><svg-windows8 /></div>
+      <div class="flex items-center text-txt-dim">
+        <svg-windows8 class="w-6 h-6" />
+      </div>
     </div>
 
     <!-- Wishlist / Price -->
     <div class="flex justify-between gap-4">
       <app-wishlist-btn />
       <div class="flex items-center gap-4">
-        <app-price-btn [data]="data" />
+        <app-price-btn-sm [data]="data" />
         <button
-          class="rounded bg-secondary p-2 px-6 text-lg hover:bg-acc-green duration-200 hover:text-bg"
+          class="rounded bg-secondary p-2 px-6 hover:bg-acc-green duration-200 hover:text-bg"
         >
           Buy Now
         </button>

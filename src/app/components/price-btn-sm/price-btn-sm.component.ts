@@ -6,9 +6,9 @@ import { GameInitializer, GameTypes } from '../../types/game';
   selector: 'app-price-btn-sm',
   standalone: true,
   imports: [DatePipe],
-  templateUrl: './price-btn.component.html',
+  templateUrl: './price-btn-sm.component.html',
 })
-export class PriceBtnComponent implements OnInit {
+export class PriceBtnSmComponent implements OnInit {
   @Input() data: GameTypes = GameInitializer;
   discountValue: number = 0;
 

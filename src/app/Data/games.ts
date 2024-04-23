@@ -9,7 +9,7 @@ export const games: GameTypes[] = [
     full_price: 59.99,
     store_genres: ['Souls-like', 'Difficult', 'Action', 'Singleplayer'],
     web_assets: {
-      capsule_616x353: '../../assets/games/sekiro_00.png',
+      capsule_616x353: '../../assets/games/Sekiro/capsule_616x353.jpg',
     },
     Assets: {
       screenshots: [

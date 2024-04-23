@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { SvgChevron } from '../../../../../assets/chevron.component';
 import { games } from '../../../../Data/games';
 import { GameTypes } from '../../../../types/game';
 import { GameComponent } from './game/game.component';
 
 @Component({
-  selector: 'app-store-featured',
+  selector: 'app-special-offer',
   standalone: true,
-  imports: [GameComponent, SvgChevron, CommonModule],
-  templateUrl: './store-featured.component.html',
+  imports: [SvgChevron, GameComponent, CommonModule],
+  templateUrl: './special-offer.component.html',
 })
-export class StoreFeaturedComponent implements OnDestroy {
+export class SpecialOfferComponent {
   slides: GameTypes[] = games;
   currentSlideIndex = 0;
   fadeIn: boolean = false;
@@ -24,6 +24,10 @@ export class StoreFeaturedComponent implements OnDestroy {
 
   constructor() {
     this.startCountdown();
+  }
+
+  log(e: any) {
+    console.log(e);
   }
 
   startCountdown(): void {

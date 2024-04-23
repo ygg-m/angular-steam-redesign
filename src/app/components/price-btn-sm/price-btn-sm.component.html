@@ -2,7 +2,7 @@
 @if (data.current_price == data.full_price) {
 <div class="flex gap-4 items-center">
   <div>
-    <p class="text-lg font-medium">$ {{ data.current_price }}</p>
+    <p class="text-sm font-medium">$ {{ data.current_price }}</p>
   </div>
 </div>
 }
@@ -10,7 +10,7 @@
 <!-- Discount Price -->
 @if (data.current_price < data.full_price && data.discount_date == undefined) {
 <div class="flex gap-4 items-center">
-  <div class="p-2 px-4 bg-acc-green text-bg font-medium text-lg rounded">
+  <div class="p-2 px-4 bg-acc-green text-bg font-bold text-sm rounded">
     -{{ discountValue }}%
   </div>
   <div class="flex flex-col">
@@ -20,7 +20,7 @@
       ></div>
       $ {{ data.full_price }}
     </div>
-    <div class="text-lg font-medium text-acc-green">
+    <div class="text-sm font-medium text-acc-green">
       $ {{ data.current_price }}
     </div>
   </div>
@@ -31,10 +31,9 @@
 @if (data.current_price < data.full_price && data.discount_date !== undefined) {
 <div class="flex gap-4 items-center">
   <div class="text-txt-dim text-sm text-right">
-    <p>Until</p>
-    <p>{{ data.discount_date | date : "LLL dd" }}</p>
+    <p>Until {{ data.discount_date | date : "LLL dd" }}</p>
   </div>
-  <div class="p-2 px-4 bg-acc-green text-bg font-medium text-lg rounded">
+  <div class="p-2 px-4 bg-acc-green text-bg font-bold text-sm rounded">
     -{{ discountValue }}%
   </div>
   <div class="flex flex-col">
@@ -44,7 +43,7 @@
       ></div>
       $ {{ data.full_price }}
     </div>
-    <div class="text-lg font-medium text-acc-green">
+    <div class="text-sm font-medium text-acc-green">
       $ {{ data.current_price }}
     </div>
   </div>

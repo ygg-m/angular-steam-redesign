@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-screenshot',
+  selector: 'app-sshot',
   standalone: true,
   imports: [],
-  templateUrl: './screenshot.component.html',
+  templateUrl: './sshot.component.html',
 })
-export class ScreenshotComponent {
+export class SshotComponent {
   @Input() url: string = '';
 }

@@ -1,12 +1,12 @@
-<app-navbar
-  class="w-full bg-bg flex items-center justify-center text-txt px-4 p-2"
-/>
-<app-store-navibar
-  class="w-full bg-bg-tertiary flex justify-center text-txt px-3 p-2"
-/>
-<div class="w-screen bg-store h-[6600px] flex items-center flex-col gap-32">
-  <app-store-hero />
-  <div class="max-w-[1380px] w-screen flex flex-col items-center">
-    <app-store-featured class="w-full" />
+<app-navbar class="bg-bg flex items-center justify-center text-txt px-4 p-2" />
+<app-navibar class="bg-bg-tertiary flex justify-center text-txt px-3 p-2" />
+<div class="bg-store h-[6600px] flex items-center flex-col gap-32">
+  <app-hero />
+  <div class="max-w-[1380px] w-screen flex flex-col items-center gap-16">
+    <!-- Featured -->
+    <app-featured class="w-full" />
+
+    <!-- Special Offers -->
+    <app-special-offer class="w-full" />
   </div>
 </div>
