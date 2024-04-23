@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { SvgAdd } from '../../../../../../assets/add.component';
 import { SvgWindows8 } from '../../../../../../assets/windows8.component';
+import { PriceBtnComponent } from '../../../../../components/price-btn/price-btn.component';
 import { WishlistBtnComponent } from '../../../../../components/wishlist-btn/wishlist-btn.component';
 import { TruncatePipe } from '../../../../../pipes/truncate.pipe';
 import { GameInitializer, GameTypes } from '../../../../../types/game';
@@ -19,6 +20,7 @@ import { ScreenshotComponent } from '../screenshot/screenshot.component';
     WishlistBtnComponent,
     CommonModule,
     TruncatePipe,
+    PriceBtnComponent,
   ],
   templateUrl: './game.component.html',
 })

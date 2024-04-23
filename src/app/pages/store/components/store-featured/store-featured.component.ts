@@ -17,7 +17,8 @@ export class StoreFeaturedComponent implements OnDestroy {
   fadeIn: boolean = false;
   private slideInterval: any;
   interval: any;
-  timer: number = 8;
+  interval_time: number = 5;
+  timer: number = 5;
   progress: number = 100;
   isPaused: boolean = false;
 
@@ -29,7 +30,9 @@ export class StoreFeaturedComponent implements OnDestroy {
     this.interval = setInterval(() => {
       if (!this.isPaused) {
         this.timer -= 0.1;
-        this.progress = Math.trunc(100 - (this.timer / 8) * 100);
+        this.progress = Math.trunc(
+          100 - (this.timer / this.interval_time) * 100
+        );
 
         if (this.timer <= 0) {
           this.changeSlide('next');
@@ -62,8 +65,8 @@ export class StoreFeaturedComponent implements OnDestroy {
     }
 
     this.fadeIn = true;
-    this.timer = 8;
-    this.progress = 100;
+    this.timer = this.interval_time;
+    this.progress = 0;
 
     setTimeout(() => {
       this.fadeIn = false;

@@ -12,6 +12,7 @@ export interface GameTypes {
   current_price: number;
   full_price: number;
   description: string;
+  discount_date?: Date;
   // developer: string[];
   // metacritic_name: string;
   // metacritic_score: number;

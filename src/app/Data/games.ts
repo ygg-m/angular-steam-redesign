@@ -26,6 +26,7 @@ export const games: GameTypes[] = [
       "Here comes Capcom's newest challenger! Street Fighter™ 6 launches worldwide on June 2nd, 2023 and represents the next evolution of the Street Fighter™ series! Street Fighter 6 spans three distinct game modes, including World Tour, Fighting Ground and Battle Hub.",
     current_price: 39.59,
     full_price: 59.99,
+    discount_date: new Date('2024-04-22'),
     store_genres: ['2D Fighter', 'Fighting', 'Character Customization', '3D'],
     web_assets: {
       capsule_616x353: '../../assets/games/StreetFighter6/capsule_616x353.jpg',

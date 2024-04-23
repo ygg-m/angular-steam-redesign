@@ -2,13 +2,13 @@
   <h3 class="text-lg uppercase font-medium">Featured</h3>
   <!-- Caroussel -->
   <div
-    class="flex w-full"
+    class="flex w-full bg-bg bg-opacity-20 py-4"
     (mouseenter)="pauseCountdown()"
     (mouseleave)="pauseCountdown()"
   >
     <!-- Arrow Back -->
     <button
-      class="w-12 text-txt-dim hover:text-txt duration-200 flex justify-center items-center"
+      class="w-16 text-txt-dim hover:text-txt duration-200 flex justify-center items-center"
       title="Previous Slide"
       (click)="changeSlide('prev')"
     >
@@ -29,7 +29,7 @@
 
     <!-- Arrow Foward -->
     <button
-      class="w-12 rotate-180 text-txt-dim hover:text-txt duration-200"
+      class="w-16 rotate-180 text-txt-dim hover:text-txt duration-200"
       title="Next Slide"
       (click)="changeSlide('next')"
     >
@@ -41,11 +41,11 @@
   <div class="flex w-full items-center justify-center gap-2">
     <ng-container *ngFor="let slide of slides; let i = index">
       <button
-        class="w-6 h-2 bg-bg rounded-full relative overflow-hidden"
+        class="w-12 h-3 bg-bg rounded-full relative overflow-hidden"
         (click)="changeSlide(i)"
       >
         <div
-          class="absolute top-0 left-0 h-full bg-secondary"
+          class="absolute top-0 h-full bg-secondary rounded-full"
           style="width: {{ progress }}%"
           [hidden]="i !== currentSlideIndex"
         ></div></button
