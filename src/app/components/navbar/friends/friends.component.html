@@ -1,0 +1,346 @@
+<!-- Button -->
+<button
+  #toggleButton
+  class="relative"
+  (click)="togglePopUp()"
+  title="Friends"
+  class="flex justify-center items-center px-2 p-1 text-txt-dim bg-bg-high rounded hover:text-txt hover:bg-bg-hover gap-3 text-sm h-full duration-200"
+>
+  <svg-people class="w-5 h-5 px-2 box-content" />
+</button>
+
+<!-- Pop-up -->
+<div
+  #popUp
+  class="absolute top-10 left-0 pt-3 text-txt slide-in-top"
+  [ngClass]="{
+    'slide-out-top -z-10': !showFriends,
+    'slide-in-top': showFriends,
+    'hidden': hideFriends,
+  }"
+>
+  <div
+    class="bg-friends rounded-lg drop-shadow-lg p-5 w-[360px] flex flex-col gap-4"
+  >
+    <!-- Title / Buttons -->
+    <div class="flex justify-between w-full">
+      <!-- Profile Info -->
+      <div class="flex gap-4">
+        <!-- Profile Pic -->
+        <img
+          src="https://pbs.twimg.com/profile_images/1774980059800956928/ssqG7x5k_400x400.jpg"
+          class="w-12 h-12 rounded border-txt-dim border-2"
+          alt=""
+        />
+        <div class="flex flex-col gap-1 justify-center-center">
+          <!-- Profile Name -->
+          <h4 class="font-medium">Ygg</h4>
+          <!-- Status -->
+          <button class="flex items-center gap-2 text-sm">
+            <div class="h-2 w-2 bg-primary rounded-full"></div>
+            <p class="text-primary">Online</p>
+            <div class="w-4 h-4 -rotate-90 text-txt-dim">
+              <svg-chevron />
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Add Button -->
+      <div class="flex gap-2">
+        <button
+          class="w-5 h-5 box-content p-1 bg-bg-hover bg-opacity-50 rounded hover:bg-opacity-100 duration-200 text-txt-dim hover:text-txt"
+        >
+          <svg-add-circle />
+        </button>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="bg-opacity-50 rounded flex flex-col">
+      <!-- Tabs -->
+      <div class="flex gap-2">
+        <!-- Tab : Friends -->
+        <button
+          class="rounded-t bg-bg hover:text-txt duration-200 w-full flex items-center justify-center p-2 pb-3 -mb-1"
+          [ngClass]="{
+            'bg-bg-hover': friendTab === 0,
+            'hover:bg-bg-hover hover:bg-opacity-30 hover:text-txt text-txt-dim':
+              friendTab === 1
+          }"
+          (click)="changeFriendTab(0)"
+        >
+          <h4>Friends</h4>
+        </button>
+
+        <!-- Tab : Activity -->
+        <button
+          class="rounded-t bg-bg hover:text-txt duration-200 w-full flex items-center justify-center p-2 pb-3 -mb-1"
+          [ngClass]="{
+            'bg-bg-hover': friendTab === 1,
+            'hover:bg-bg-hover hover:bg-opacity-30 hover:text-txt text-txt-dim':
+              friendTab === 0
+          }"
+          (click)="changeFriendTab(1)"
+        >
+          <h4>Activity</h4>
+        </button>
+      </div>
+
+      <!-- Tab Content -->
+
+      <!-- Friends -->
+      <div
+        class="bg-bg-hover w-full p-4 rounded-b rounded-tr flex flex-col gap-4"
+        *ngIf="friendTab === 0"
+      >
+        <!-- Online -->
+        <div class="text-txt-dim text-sm flex flex-col gap-2">
+          <h5>Online (2)</h5>
+
+          <!-- User 1 -->
+          <div class="flex gap-2 text-primary">
+            <div
+              class="overflow-hidden rounded w-12 h-12 border-2 border-primary"
+            >
+              <img
+                src="https://i.pravatar.cc/300"
+                class="h-full w-full"
+                alt=""
+              />
+            </div>
+            <div class="flex flex-col gap-1">
+              <p>Friend 1</p>
+              <p class="text-xs">No Man's Sky</p>
+            </div>
+          </div>
+
+          <!-- User 2 -->
+          <div class="flex gap-2 text-acc-yellow">
+            <div
+              class="overflow-hidden rounded w-12 h-12 border-2 border-acc-yellow"
+            >
+              <img
+                src="https://i.pravatar.cc/200"
+                class="h-full w-full"
+                alt=""
+              />
+            </div>
+            <div class="flex flex-col gap-2">
+              <p>Friend 2</p>
+              <p class="text-xs">Away</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offline -->
+        <div class="text-txt-dim text-sm flex flex-col gap-2 border-txt-dim">
+          <h5>Offline (2)</h5>
+
+          <!-- User 1 -->
+          <div class="flex gap-2">
+            <div class="overflow-hidden rounded w-12 h-12 border-2">
+              <img
+                src="https://i.pravatar.cc/250"
+                class="h-full w-full"
+                alt=""
+              />
+            </div>
+            <div class="flex flex-col gap-1">
+              <p>Friend 3</p>
+              <p class="text-xs">Offline</p>
+            </div>
+          </div>
+
+          <!-- User 2 -->
+          <div class="flex gap-2">
+            <div class="overflow-hidden rounded w-12 h-12 border-2">
+              <img
+                src="https://i.pravatar.cc/350"
+                class="h-full w-full"
+                alt=""
+              />
+            </div>
+            <div class="flex flex-col gap-2">
+              <p>Friend 4</p>
+              <p class="text-xs">Offline</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 1 -->
+      <div
+        class="bg-bg-hover w-full p-4 rounded-b rounded-tr flex flex-col gap-4 text-sm"
+        *ngIf="friendTab === 1"
+      >
+        <!-- Date -->
+        <div class="flex flex-col gap-4">
+          <div
+            class="text-primary border-b border-primary border-opacity-30 pb-1"
+          >
+            Oct 13
+          </div>
+          <!-- Content -->
+          <div class="flex flex-col gap-4">
+            <!-- Activity -->
+            <div class="flex gap-2">
+              <!-- Image -->
+              <div class="flex flex-col justify-center">
+                <!-- Image 1 -->
+                <div
+                  class="w-8 h-8 rounded overflow-hidden border border-txt-dim"
+                >
+                  <img
+                    src="https://i.pravatar.cc/250"
+                    alt=""
+                    class="w-full h-full"
+                  />
+                </div>
+
+                <!-- Image 2 -->
+                <div
+                  class="w-8 h-8 rounded overflow-hidden border border-txt-dim -mt-4"
+                >
+                  <img
+                    src="https://i.pravatar.cc/350"
+                    alt=""
+                    class="w-full h-full"
+                  />
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="flex items-center">
+                <p class="text-base">
+                  <a href="#" class="text-primary">Friend 3</a> and
+                  <a href="#" class="text-primary">Friend 2</a> are now friends.
+                </p>
+              </div>
+            </div>
+
+            <!-- Activity 2 -->
+            <div class="flex gap-2">
+              <!-- Image -->
+              <div class="flex flex-col justify-center">
+                <!-- Image 1 -->
+                <div
+                  class="w-8 h-8 rounded overflow-hidden border border-txt-dim"
+                >
+                  <img
+                    src="https://i.pravatar.cc/250"
+                    alt=""
+                    class="w-full h-full"
+                  />
+                </div>
+
+                <!-- Image 2 -->
+                <!-- <div
+                      class="w-8 h-8 rounded overflow-hidden border border-txt-dim -mt-4"
+                    >
+                      <img
+                        src="https://i.pravatar.cc/350"
+                        alt=""
+                        class="w-full h-full"
+                      />
+                    </div> -->
+              </div>
+
+              <!-- Content -->
+              <div class="flex items-center">
+                <p class="text-base">
+                  <a href="#" class="text-primary">Friend 3</a> added
+                  <a href="#" class="text-primary">Cyberpunk 2077</a> to their
+                  wishlist.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Date 2 -->
+        <div class="flex flex-col gap-4">
+          <div
+            class="text-primary border-b border-primary border-opacity-30 pb-1"
+          >
+            Oct 12
+          </div>
+          <!-- Content -->
+          <div class="flex flex-col gap-4">
+            <!-- Activity -->
+            <div class="flex gap-2">
+              <!-- Image -->
+              <div class="flex flex-col justify-center">
+                <!-- Image 1 -->
+                <div
+                  class="w-8 h-8 rounded overflow-hidden border border-txt-dim"
+                >
+                  <img
+                    src="https://i.pravatar.cc/250"
+                    alt=""
+                    class="w-full h-full"
+                  />
+                </div>
+
+                <!-- Image 2 -->
+                <!-- <div
+                      class="w-8 h-8 rounded overflow-hidden border border-txt-dim -mt-4"
+                    >
+                      <img
+                        src="https://i.pravatar.cc/350"
+                        alt=""
+                        class="w-full h-full"
+                      />
+                    </div> -->
+              </div>
+
+              <!-- Content -->
+              <div class="flex items-center">
+                <p class="text-base">
+                  <a href="#" class="text-primary">Friend 1</a> now owns
+                  <a href="#" class="text-primary">No Man's Sky</a>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Activity 2 -->
+            <div class="flex gap-2">
+              <!-- Image -->
+              <div class="flex flex-col justify-center">
+                <!-- Image 1 -->
+                <div
+                  class="w-8 h-8 rounded overflow-hidden border border-txt-dim"
+                >
+                  <img
+                    src="https://pbs.twimg.com/profile_images/1774980059800956928/ssqG7x5k_400x400.jpg"
+                    alt=""
+                    class="w-full h-full"
+                  />
+                </div>
+
+                <!-- Image 2 -->
+                <div
+                  class="w-8 h-8 rounded overflow-hidden border border-txt-dim -mt-4"
+                >
+                  <img
+                    src="https://i.pravatar.cc/350"
+                    alt=""
+                    class="w-full h-full"
+                  />
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="flex items-center">
+                <p class="text-base">
+                  <a href="#" class="text-primary">You</a> and
+                  <a href="#" class="text-primary">Friend 4</a> are now friends.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

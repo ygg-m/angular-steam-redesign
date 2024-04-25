@@ -1,0 +1,101 @@
+<!-- Button -->
+<button
+  #toggleButton
+  (click)="togglePopUp()"
+  title="Notifications"
+  class="flex justify-center items-center px-2 p-1 text-txt-dim bg-bg-high rounded hover:text-txt hover:bg-bg-hover gap-3 text-sm h-full duration-200"
+>
+  <div
+    class="absolute -top-1 -right-1 rounded-full bg-primary px-[4px] text-bg font-medium flex items-center justify-center text-xs"
+  >
+    2
+  </div>
+  <svg-notification class="w-5 h-5 px-2 box-content" />
+</button>
+
+<!-- Pop-up -->
+<div
+  #popUp
+  class="absolute top-10 left-0 pt-3 text-txt slide-in-top"
+  [ngClass]="{
+      'hidden': hideNotifications,
+      'slide-in-top': showNotifications,
+      'slide-out-top -z-10': !showNotifications,
+    }"
+>
+  <div
+    class="bg-bg-high rounded-lg drop-shadow-lg p-5 w-[360px] flex flex-col gap-4"
+  >
+    <!-- Title / Buttons -->
+    <div class="flex justify-between w-full items-center">
+      <h4 class="font-medium">Notifications</h4>
+      <div class="flex gap-2">
+        <button
+          class="w-5 h-5 box-content p-1 bg-bg-hover bg-opacity-50 rounded hover:bg-opacity-100 duration-200 text-txt-dim hover:text-txt"
+        >
+          <svg-mail-read />
+        </button>
+        <button
+          class="w-5 h-5 box-content p-1 bg-bg-hover bg-opacity-50 rounded hover:bg-opacity-100 duration-200 text-txt-dim hover:text-txt"
+        >
+          <svg-settings />
+        </button>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="bg-bg bg-opacity-50 rounded flex flex-col p-2 px-3 gap-2">
+      <div class="flex justify-between items-center">
+        <!-- From -->
+        <div class="flex gap-2 items-center text-sm text-txt-dim">
+          <div class="w-4 h-4"><svg-people /></div>
+          Community
+        </div>
+
+        <!-- New Notification Icon -->
+        <div class="h-2 w-2 bg-primary rounded-full"></div>
+      </div>
+      <!-- Notification Content -->
+      <p>
+        <span class="text-primary">Your Friend</span> left a comment in your
+        profile.
+      </p>
+    </div>
+
+    <div class="bg-bg bg-opacity-50 rounded flex flex-col p-2 px-3 gap-2">
+      <div class="flex justify-between items-center">
+        <!-- From -->
+        <div class="flex gap-2 items-center text-sm text-txt-dim">
+          <div class="w-4 h-4"><svg-people /></div>
+          Community
+        </div>
+
+        <!-- New Notification Icon -->
+        <div class="h-2 w-2 bg-primary rounded-full"></div>
+      </div>
+      <!-- Notification Content -->
+      <p>
+        <span class="text-primary">Your Friend</span> left a comment in your
+        profile.
+      </p>
+    </div>
+
+    <div class="bg-bg bg-opacity-25 rounded flex flex-col p-2 px-3 gap-2">
+      <div class="flex justify-between items-center">
+        <!-- From -->
+        <div class="flex gap-2 items-center text-sm text-txt-dim">
+          <div class="w-4 h-4"><svg-people /></div>
+          Community
+        </div>
+
+        <!-- New Notification Icon -->
+        <!-- <div class="h-2 w-2 bg-primary rounded-full"></div> -->
+      </div>
+      <!-- Notification Content -->
+      <p>
+        <span class="text-primary">Your Friend</span> left a comment in your
+        profile.
+      </p>
+    </div>
+  </div>
+</div>

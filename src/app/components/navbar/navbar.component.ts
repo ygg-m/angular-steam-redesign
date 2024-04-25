@@ -1,14 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SvgChevron } from '../../../assets/chevron.component';
-import { SvgCross } from '../../../assets/cross.component';
-import { SvgMinimize } from '../../../assets/minimize.component';
-import { SvgNotification } from '../../../assets/notification.component';
-import { SvgPeople } from '../../../assets/people.component';
+import { SvgMenu } from '../../../assets/menu.component';
 import { SvgSteamFont } from '../../../assets/steam-font.component';
 import { SvgSteamIcon } from '../../../assets/steam-icon.component';
-import { SvgWindow } from '../../../assets/window.component';
-import { BtnSmComponent } from '../btn-sm/btn-sm.component';
 import { BtnPageComponent } from './btn-page/btn-page.component';
+import { BtnsWindowsComponent } from './btns-windows/btns-windows.component';
+import { FriendsComponent } from './friends/friends.component';
+import { MenuMobileComponent } from './menu-mobile/menu-mobile.component';
+import { MenuComponent } from './menu/menu.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-navbar',
@@ -16,15 +18,32 @@ import { BtnPageComponent } from './btn-page/btn-page.component';
   imports: [
     SvgSteamFont,
     SvgSteamIcon,
-    SvgPeople,
-    SvgNotification,
-    BtnSmComponent,
     SvgChevron,
-    SvgCross,
-    SvgMinimize,
-    SvgWindow,
     BtnPageComponent,
+    SvgMenu,
+    CommonModule,
+    MenuComponent,
+    FriendsComponent,
+    NotificationsComponent,
+    ProfileComponent,
+    BtnsWindowsComponent,
+    MenuMobileComponent,
   ],
   templateUrl: './navbar.component.html',
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  showMobileMenu: boolean = false;
+  hideMobileMenu: boolean = true;
+
+  toggleMobileMenu() {
+    if (this.showMobileMenu == false && this.hideMobileMenu == true) {
+      this.showMobileMenu = true;
+      this.hideMobileMenu = false;
+    } else if (this.showMobileMenu == true && this.hideMobileMenu == false) {
+      this.showMobileMenu = false;
+      setTimeout(() => {
+        this.hideMobileMenu = true;
+      }, 250);
+    }
+  }
+}

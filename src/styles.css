@@ -60,6 +60,7 @@ input:focus {
   );
 }
 
+
 /**
  * ----------------------------------------
  * animation fade-out-bck
@@ -119,3 +120,5 @@ input:focus {
     opacity: 1;
   }
 }
+
+

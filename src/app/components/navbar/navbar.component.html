@@ -1,64 +1,44 @@
-<div class="flex justify-between items-center max-w-screen-2xl w-full">
+<div class="flex justify-between items-center w-full z-10">
   <!-- Left Part -->
   <div class="flex">
     <div class="flex gap-4">
       <!-- Navigate Buttons -->
-      <div class="flex text-txt-dim items-center justify-center">
+      <div class="xl:flex hidden text-txt-dim items-center justify-center">
         <button class="w-8 h-8 hover:text-txt duration-200">
           <svg-chevron class="" />
         </button>
+
         <button class="w-8 h-8 hover:text-txt rotate-180 duration-200">
           <svg-chevron class="" />
         </button>
       </div>
+
       <!-- Steam Logo -->
       <a href="#" class="flex gap-2 items-center justify-center">
         <app-steam-icon class="w-[20px]" />
         <app-steam-font class="w-[59px]" />
       </a>
     </div>
-    <!-- Menu Buttons -->
-    <div
-      class="flex gap-8 pl-16 uppercase font-medium items-center justify-center"
-    >
-      <app-btn-page class="text-primary">Store</app-btn-page>
-      <app-btn-page>Community</app-btn-page>
-      <app-btn-page>Ygg</app-btn-page>
-      <app-btn-page>Library</app-btn-page>
-      <app-btn-page>Downloads</app-btn-page>
-    </div>
+
+    <!-- Menu -->
+    <app-menu
+      class="xl:flex gap-8 pl-16 uppercase font-medium items-center justify-center hidden"
+    />
   </div>
 
   <!-- Right Part -->
   <div class="flex gap-2">
     <!-- Friends -->
-    <app-btn-sm>
-      <svg-people class="w-5 h-5 px-2 box-content" />
-    </app-btn-sm>
+    <app-friends class="relative" />
 
     <!-- Notifications -->
-    <app-btn-sm class="relative">
-      <div
-        class="absolute -top-1 -right-1 rounded-full bg-primary px-[4px] text-bg font-medium flex items-center justify-center text-xs"
-      >
-        2
-      </div>
-      <svg-notification class="w-5 h-5 px-2 box-content" />
-    </app-btn-sm>
+    <app-notifications class="relative" />
+
     <!-- Profile -->
-    <app-btn-sm>
-      <img
-        src="https://pbs.twimg.com/profile_images/1774980059800956928/ssqG7x5k_400x400.jpg"
-        alt="Profile Picture"
-        class="w-8 h-8 box-content rounded"
-      />
-      <span class="text-txt">YggProfile</span>
-      <span>$12.45</span>
-      <span class="w-5 -rotate-90 text-txt"><svg-chevron /></span>
-    </app-btn-sm>
+    <app-profile class="relative" />
 
     <!-- Help / View Buttons -->
-    <div class="pl-8 flex items-center justify-center">
+    <div class="pl-8 md:flex items-center justify-center hidden">
       <button class="text-txt-dim hover:text-txt h-full px-2 duration-200">
         Help
       </button>
@@ -69,23 +49,26 @@
         <span class="w-5 -rotate-90"><svg-chevron /></span>
       </button>
     </div>
+
     <!-- Window Buttons -->
-    <div class="flex items-center justify-center">
-      <button
-        class="w-6 px-2 box-content text-txt-dim hover:text-txt duration-200"
-      >
-        <svg-minimize />
-      </button>
-      <button
-        class="w-6 px-2 box-content text-txt-dim hover:text-txt duration-200"
-      >
-        <svg-window />
-      </button>
-      <button
-        class="w-6 px-2 box-content text-txt-dim hover:text-acc-red duration-200"
-      >
-        <svg-cross />
+    <app-btns-windows class="items-center justify-center hidden 2xl:flex" />
+
+    <!-- Mobile Button -->
+    <div
+      class="flex items-center justify-center xl:hidden"
+      (click)="toggleMobileMenu()"
+    >
+      <button class="w-8 h-8 px-4 box-content">
+        <svg-menu />
       </button>
     </div>
   </div>
 </div>
+
+<!-- Menu -->
+<app-menu-mobile
+  class="absolute bg-bg bg-opacity-95 w-screen h-screen top-0 left-0 flex flex-col pt-16 p-4 pr-8 gap-4 slide-in-left text-right"
+  [class.hidden]="hideMobileMenu"
+  [class.slide-in-right]="showMobileMenu"
+  [class.slide-out-right]="!showMobileMenu"
+/>
