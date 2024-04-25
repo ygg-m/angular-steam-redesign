@@ -1,7 +1,6 @@
 <!-- Button -->
 <button
   #toggleButton
-  class="relative"
   (click)="togglePopUp()"
   title="Friends"
   class="flex justify-center items-center px-2 p-1 text-txt-dim bg-bg-high rounded hover:text-txt hover:bg-bg-hover gap-3 text-sm h-full duration-200"
@@ -9,14 +8,14 @@
   <svg-people class="w-5 h-5 px-2 box-content" />
 </button>
 
-<!-- Pop-up -->
+<!-- Dropdown -->
 <div
-  #popUp
+  #dropdown
   class="absolute top-10 left-0 pt-3 text-txt slide-in-top"
   [ngClass]="{
-    'slide-out-top -z-10': !showFriends,
-    'slide-in-top': showFriends,
-    'hidden': hideFriends,
+    'slide-out-top -z-10': !showDropdown,
+    'slide-in-top': showDropdown,
+    'hidden': hideDropdown,
   }"
 >
   <div

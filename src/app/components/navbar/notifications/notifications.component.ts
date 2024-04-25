@@ -21,37 +21,37 @@ import { BtnSmComponent } from '../../btn-sm/btn-sm.component';
   styleUrl: './notifications.component.css',
 })
 export class NotificationsComponent {
-  showNotifications: boolean = false;
-  hideNotifications: boolean = true;
+  showDropdown: boolean = false;
+  hideDropdown: boolean = true;
 
   @ViewChild('toggleButton') toggleButton!: ElementRef;
-  @ViewChild('popUp') popUp!: ElementRef;
+  @ViewChild('dropdown') dropdown!: ElementRef;
 
   constructor(private renderer: Renderer2) {
     this.renderer.listen('window', 'click', (e: Event) => {
       if (
         !this.toggleButton.nativeElement.contains(e.target) &&
-        !this.popUp.nativeElement.contains(e.target)
+        !this.dropdown.nativeElement.contains(e.target)
       ) {
-        this.showNotifications = false;
+        this.showDropdown = false;
         setTimeout(() => {
-          this.hideNotifications = true;
+          this.hideDropdown = true;
         }, 250);
       }
     });
   }
 
-  togglePopUp() {
-    if (this.showNotifications == false && this.hideNotifications == true) {
-      this.showNotifications = true;
-      this.hideNotifications = false;
+  toggleDropdown() {
+    if (this.showDropdown == false && this.hideDropdown == true) {
+      this.showDropdown = true;
+      this.hideDropdown = false;
     } else if (
-      this.showNotifications == true &&
-      this.hideNotifications == false
+      this.showDropdown == true &&
+      this.hideDropdown == false
     ) {
-      this.showNotifications = false;
+      this.showDropdown = false;
       setTimeout(() => {
-        this.hideNotifications = true;
+        this.hideDropdown = true;
       }, 250);
     }
   }

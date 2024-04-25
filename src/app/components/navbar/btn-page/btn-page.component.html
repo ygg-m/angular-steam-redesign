@@ -1,1 +1,29 @@
-<a href="" class="hover:text-primary duration-200"><ng-content /></a>
+<a
+  class="hover:text-primary duration-200"
+  (mouseover)="openDropdown()"
+  (mouseout)="closeDropdown()"
+  #toggleButton
+>
+  {{ label }}
+</a>
+
+<!-- Dropdown -->
+<div
+  #dropdown
+  class="absolute top-10 left-0 pt-3 text-txt slide-in-top"
+  [ngClass]="{
+    'slide-out-top -z-10': !showDropdown,
+    'slide-in-top': showDropdown,
+    'hidden': hideDropdown,
+  }"
+>
+  <div
+    class="bg-bg-high rounded-lg drop-shadow-lg flex flex-col gap-4 w-52 overflow-hidden"
+  >
+    <ul>
+      <li class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer">
+        <a href="">Account Details</a>
+      </li>
+    </ul>
+  </div>
+</div>

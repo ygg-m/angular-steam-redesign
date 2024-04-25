@@ -1,4 +1,9 @@
-<app-btn-sm>
+<button
+  #toggleButton
+  class="flex justify-center items-center px-2 p-1 text-txt-dim bg-bg-high rounded hover:text-txt hover:bg-bg-hover gap-3 text-sm h-full duration-200"
+  (click)="togglePopUp()"
+  title="Profile"
+>
   <img
     src="https://pbs.twimg.com/profile_images/1774980059800956928/ssqG7x5k_400x400.jpg"
     alt="Profile Picture"
@@ -6,5 +11,51 @@
   />
   <span class="text-txt">YggProfile</span>
   <span>$12.45</span>
-  <span class="w-5 -rotate-90 text-txt"><svg-chevron /></span>
-</app-btn-sm>
+  <span
+    [ngClass]="{ '-rotate-90': !showDropdown, 'rotate-90': showDropdown }"
+    class="w-5 text-txt"
+    ><svg-chevron
+  /></span>
+</button>
+
+<!-- Dropdown -->
+<div
+  #dropdown
+  class="absolute top-10 left-0 pt-3 text-txt slide-in-top"
+  [ngClass]="{
+    'slide-out-top -z-10': !showDropdown,
+    'slide-in-top': showDropdown,
+    'hidden': hideDropdown,
+  }"
+>
+  <div
+    class="bg-bg-high rounded-lg drop-shadow-lg flex flex-col gap-4 w-52 overflow-hidden"
+  >
+    <ul>
+      <li class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer">
+        <a href="">Account Details</a>
+      </li>
+      <li class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer">
+        <a href="">Wallet</a>
+      </li>
+      <li class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer">
+        <a href="">Settings</a>
+      </li>
+      <li class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer">
+        <a href="">Client Updates</a>
+      </li>
+      <li class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer">
+        <a href="">Go Offline</a>
+      </li>
+      <li class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer">
+        <a href="">Change Account</a>
+      </li>
+      <li class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer">
+        <a href="">Sign Out</a>
+      </li>
+      <li class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer">
+        <a href="">Exit</a>
+      </li>
+    </ul>
+  </div>
+</div>

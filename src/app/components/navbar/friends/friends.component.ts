@@ -13,35 +13,35 @@ import { BtnSmComponent } from '../../btn-sm/btn-sm.component';
   styleUrl: './friends.component.css',
 })
 export class FriendsComponent {
-  showFriends: boolean = false;
-  hideFriends: boolean = true;
+  showDropdown: boolean = false;
+  hideDropdown: boolean = true;
   friendTab: number = 0;
 
   @ViewChild('toggleButton') toggleButton!: ElementRef;
-  @ViewChild('popUp') popUp!: ElementRef;
+  @ViewChild('dropdown') dropdown!: ElementRef;
 
   constructor(private renderer: Renderer2) {
     this.renderer.listen('window', 'click', (e: Event) => {
       if (
         !this.toggleButton.nativeElement.contains(e.target) &&
-        !this.popUp.nativeElement.contains(e.target)
+        !this.dropdown.nativeElement.contains(e.target)
       ) {
-        this.showFriends = false;
+        this.showDropdown = false;
         setTimeout(() => {
-          this.hideFriends = true;
+          this.hideDropdown = true;
         }, 250);
       }
     });
   }
 
   togglePopUp() {
-    if (this.showFriends == false && this.hideFriends == true) {
-      this.showFriends = true;
-      this.hideFriends = false;
-    } else if (this.showFriends == true && this.hideFriends == false) {
-      this.showFriends = false;
+    if (this.showDropdown == false && this.hideDropdown == true) {
+      this.showDropdown = true;
+      this.hideDropdown = false;
+    } else if (this.showDropdown == true && this.hideDropdown == false) {
+      this.showDropdown = false;
       setTimeout(() => {
-        this.hideFriends = true;
+        this.hideDropdown = true;
       }, 250);
     }
   }

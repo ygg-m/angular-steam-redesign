@@ -1,7 +1,7 @@
 <!-- Button -->
 <button
   #toggleButton
-  (click)="togglePopUp()"
+  (click)="toggleDropdown()"
   title="Notifications"
   class="flex justify-center items-center px-2 p-1 text-txt-dim bg-bg-high rounded hover:text-txt hover:bg-bg-hover gap-3 text-sm h-full duration-200"
 >
@@ -13,14 +13,14 @@
   <svg-notification class="w-5 h-5 px-2 box-content" />
 </button>
 
-<!-- Pop-up -->
+<!-- Dropdown -->
 <div
-  #popUp
+  #dropdown
   class="absolute top-10 left-0 pt-3 text-txt slide-in-top"
   [ngClass]="{
-      'hidden': hideNotifications,
-      'slide-in-top': showNotifications,
-      'slide-out-top -z-10': !showNotifications,
+      'hidden': hideDropdown,
+      'slide-in-top': showDropdown,
+      'slide-out-top -z-10': !showDropdown,
     }"
 >
   <div
