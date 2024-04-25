@@ -1,0 +1,43 @@
+<div class="flex flex-col items-center w-full px-4">
+  <a
+    href="{{ url }}"
+    class="hover:text-primary justify-end items-center flex gap-4 duration-200 uppercase font-medium text-2xl border-b hover:border-primary border-txt-dim border-opacity-50 p-4 w-full"
+    (click)="toggleDropdown()"
+  >
+    {{ label }}
+
+    <div
+      class="h-10 w-10"
+      [ngClass]="{
+        'rotate-90': showDropdown,
+        '-rotate-90': !showDropdown,
+        hidden: !subPages
+      }"
+    >
+      <svg-chevron />
+    </div>
+  </a>
+
+  @if (subPages !== undefined) {
+  <!-- Dropdown -->
+  <div
+    class="text-txt w-full"
+    [ngClass]="{
+    'fade-out': !showDropdown,
+    'fade-in': showDropdown,
+    'hidden': hideDropdown,
+  }"
+  >
+    <div class="flex flex-col gap-4 w-full text-lg">
+      <ul>
+        <li
+          *ngFor="let subPage of subPages"
+          class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer"
+        >
+          <a [href]="subPage.url">{{ subPage.label }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  }
+</div>

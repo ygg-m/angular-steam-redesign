@@ -30,10 +30,11 @@ import { ProfileComponent } from './profile/profile.component';
     MenuMobileComponent,
   ],
   templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  showMobileMenu: boolean = false;
-  hideMobileMenu: boolean = true;
+  showMobileMenu: boolean = true;
+  hideMobileMenu: boolean = false;
 
   toggleMobileMenu() {
     if (this.showMobileMenu == false && this.hideMobileMenu == true) {

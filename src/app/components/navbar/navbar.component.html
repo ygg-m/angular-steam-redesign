@@ -21,21 +21,19 @@
     </div>
 
     <!-- Menu -->
-    <app-menu
-      class="xl:flex gap-8 pl-16 items-center justify-center hidden"
-    />
+    <app-menu class="xl:flex gap-8 pl-16 items-center justify-center hidden" />
   </div>
 
   <!-- Right Part -->
   <div class="flex gap-2">
     <!-- Friends -->
-    <app-friends class="relative" />
+    <app-friends class="relative hidden sm:flex" />
 
     <!-- Notifications -->
-    <app-notifications class="relative" />
+    <app-notifications class="relative hidden sm:flex" />
 
     <!-- Profile -->
-    <app-profile class="relative" />
+    <app-profile class="relative hidden sm:flex" />
 
     <!-- Help / View Buttons -->
     <div class="pl-8 md:flex items-center justify-center hidden">
@@ -67,7 +65,7 @@
 
 <!-- Menu -->
 <app-menu-mobile
-  class="absolute bg-bg bg-opacity-95 w-screen h-screen top-0 left-0 flex flex-col pt-16 p-4 pr-8 gap-4 slide-in-left text-right"
+  class="absolute w-screen h-screen top-0 right-0 backdrop-blur bg-bg flex justify-end bg-opacity-75"
   [class.hidden]="hideMobileMenu"
   [class.slide-in-right]="showMobileMenu"
   [class.slide-out-right]="!showMobileMenu"
