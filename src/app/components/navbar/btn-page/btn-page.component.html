@@ -1,29 +1,34 @@
-<a
-  class="hover:text-primary duration-200"
-  (mouseover)="openDropdown()"
-  (mouseout)="closeDropdown()"
-  #toggleButton
->
-  {{ label }}
-</a>
-
-<!-- Dropdown -->
 <div
-  #dropdown
-  class="absolute top-10 left-0 pt-3 text-txt slide-in-top"
-  [ngClass]="{
-    'slide-out-top -z-10': !showDropdown,
+  class="h-full flex items-center"
+  (mouseenter)="openDropdown()"
+  (mouseleave)="closeDropdown()"
+>
+  <a href="" class="hover:text-primary duration-20 uppercase font-medium">
+    {{ label }}
+  </a>
+
+  @if (subPages !== undefined) {
+  <!-- Dropdown -->
+  <div
+    class="absolute -z-10 top-0 left-0 pt-10 text-txt slide-in-top"
+    [ngClass]="{
+    'slide-out-top': !showDropdown,
     'slide-in-top': showDropdown,
     'hidden': hideDropdown,
   }"
->
-  <div
-    class="bg-bg-high rounded-lg drop-shadow-lg flex flex-col gap-4 w-52 overflow-hidden"
   >
-    <ul>
-      <li class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer">
-        <a href="">Account Details</a>
-      </li>
-    </ul>
+    <div
+      class="bg-bg-high rounded-lg drop-shadow-lg flex flex-col gap-4 w-56 overflow-hidden"
+    >
+      <ul>
+        <li
+          *ngFor="let subPage of subPages"
+          class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer"
+        >
+          <a [href]="subPage.url">{{ subPage.label }}</a>
+        </li>
+      </ul>
+    </div>
   </div>
+  }
 </div>
