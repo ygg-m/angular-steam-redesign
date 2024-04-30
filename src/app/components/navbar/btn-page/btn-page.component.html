@@ -1,34 +1,40 @@
 <div
-  class="h-full flex items-center"
+  class="flex h-full items-center"
   (mouseenter)="openDropdown()"
   (mouseleave)="closeDropdown()"
 >
-  <a href="" class="hover:text-primary duration-20 uppercase font-medium">
+  <a
+    routerLink="{{ url }}"
+    routerLinkActive="activebutton"
+    ariaCurrentWhenActive="page"
+    class="font-medium uppercase duration-200 hover:text-primary"
+    [class.text-primary]="selected"
+  >
     {{ label }}
   </a>
 
   @if (subPages !== undefined) {
-  <!-- Dropdown -->
-  <div
-    class="absolute -z-10 top-0 left-0 pt-10 text-txt slide-in-top"
-    [ngClass]="{
-    'slide-out-top': !showDropdown,
-    'slide-in-top': showDropdown,
-    'hidden': hideDropdown,
-  }"
-  >
+    <!-- Dropdown -->
     <div
-      class="bg-bg-high rounded-lg drop-shadow-lg flex flex-col gap-4 w-56 overflow-hidden"
+      class="slide-in-top absolute left-0 top-0 -z-10 pt-10 text-txt"
+      [ngClass]="{
+        'slide-out-top': !showDropdown,
+        'slide-in-top': showDropdown,
+        hidden: hideDropdown
+      }"
     >
-      <ul>
-        <li
+      <div
+        class="flex w-56 flex-col overflow-hidden rounded-lg bg-bg-high drop-shadow-lg"
+      >
+        <a
           *ngFor="let subPage of subPages"
-          class="p-4 px-5 hover:bg-bg-hover duration-200 cursor-pointer"
+          routerLink="{{ subPage.url }}"
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page"
+          class="w-full p-4 px-5 duration-200 hover:bg-bg-hover"
+          >{{ subPage.label }}</a
         >
-          <a [href]="subPage.url">{{ subPage.label }}</a>
-        </li>
-      </ul>
+      </div>
     </div>
-  </div>
   }
 </div>

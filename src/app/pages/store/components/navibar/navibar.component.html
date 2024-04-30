@@ -1,39 +1,34 @@
-<div class="max-w-screen-2xl w-full flex items-center justify-between gap-2">
+<div class="flex w-full max-w-screen-2xl items-center justify-between gap-2">
   <!-- Menu -->
   <div class="flex gap-2">
-    <app-btn class="bg-secondary rounded">Home</app-btn>
-    <app-btn>Browse</app-btn>
-    <app-btn>Discover</app-btn>
-    <app-btn>Points Shop</app-btn>
-    <app-btn>Curators</app-btn>
-    <app-btn>Gift Card</app-btn>
-    <app-btn>News</app-btn>
+    <app-btn *ngFor="let link of links" [url]="link.url" [label]="link.label" />
   </div>
 
   <!-- Right -->
-  <div class="flex gap-2 items-center h-full">
+  <div class="flex h-full items-center gap-2">
     <!-- Search -->
     <div
-      class="flex bg-bg bg-opacity-20 rounded h-full max-w-md overflow-hidden"
+      class="flex h-full max-w-md overflow-hidden rounded bg-bg bg-opacity-20"
     >
       <input
         type="text"
         title="Search"
         placeholder="Search"
-        class="pl-4 h-full flex-grow bg-transparent placeholder-secondary"
+        class="h-full flex-grow bg-transparent pl-4 placeholder-secondary"
       />
-      <button class="w-6 text-secondary px-4 box-content">
+      <button class="box-content w-6 px-4 text-secondary">
         <svg-search />
       </button>
     </div>
 
     <!-- Wishlist -->
-    <app-btn>Wishlist</app-btn>
-    <app-btn>Cart</app-btn>
-    <button
-      class="bg-txt-dim bg-opacity-10 w-6 h-6 box-content p-2 text-txt-dim hover:text-txt duration-200 rounded"
+    <app-btn [label]="'Wishlist'" [url]="'/store/wishlist'" />
+    <app-btn [label]="'Cart'" [url]="'/store/cart'" />
+    <a
+    
+      class="box-content h-6 w-6 rounded bg-txt-dim bg-opacity-10 p-2 text-txt-dim duration-200 hover:bg-opacity-25 hover:text-txt"
     >
       <svg-settings />
-    </button>
+    </a>
   </div>
 </div>

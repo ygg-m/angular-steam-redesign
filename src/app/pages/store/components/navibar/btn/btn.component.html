@@ -1,3 +1,13 @@
-<button class="flex px-6 p-2 rounded duration-200">
-  <ng-content />
-</button>
+<a
+  routerLink="{{ url }}"
+  routerLinkActive="activebutton"
+  ariaCurrentWhenActive="page"
+  class="flex rounded p-2 px-6 duration-200"
+  [class]="{
+    'bg-secondary': selected,
+    'hover:bg-txt-dim': !selected,
+    'hover:bg-opacity-25': !selected
+  }"
+>
+  {{ label }}
+</a>
