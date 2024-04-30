@@ -33,8 +33,8 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  showMobileMenu: boolean = true;
-  hideMobileMenu: boolean = false;
+  showMobileMenu: boolean = false;
+  hideMobileMenu: boolean = true;
 
   toggleMobileMenu() {
     if (this.showMobileMenu == false && this.hideMobileMenu == true) {

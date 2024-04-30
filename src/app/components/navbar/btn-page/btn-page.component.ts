@@ -16,7 +16,7 @@ interface SubPage {
 export class BtnPageComponent {
   @Input() label: string = '';
   @Input() url: string = '';
-  @Input() subPages?: SubPage[] = [];
+  @Input() subPages?: SubPage[] | null;
 
   showDropdown: boolean = false;
   hideDropdown: boolean = true;
