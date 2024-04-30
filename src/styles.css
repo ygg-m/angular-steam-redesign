@@ -4,6 +4,7 @@
 
 html {
   overflow-x: hidden;
+  font-family: "Motiva Sans", sans-serif;
 }
 
 body {
@@ -59,7 +60,6 @@ input:focus {
     #202b3c 27.29%
   );
 }
-
 
 /**
  * ----------------------------------------
@@ -120,5 +120,3 @@ input:focus {
     opacity: 1;
   }
 }
-
-
