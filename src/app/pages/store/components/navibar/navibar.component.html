@@ -24,8 +24,11 @@
     <!-- Wishlist -->
     <app-btn [label]="'Wishlist'" [url]="'/store/wishlist'" />
     <app-btn [label]="'Cart'" [url]="'/store/cart'" />
+
     <a
-    
+      routerLink="/store/config"
+      routerLinkActive="activebutton"
+      ariaCurrentWhenActive="page"
       class="box-content h-6 w-6 rounded bg-txt-dim bg-opacity-10 p-2 text-txt-dim duration-200 hover:bg-opacity-25 hover:text-txt"
     >
       <svg-settings />

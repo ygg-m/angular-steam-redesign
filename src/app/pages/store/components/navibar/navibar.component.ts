@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { SvgSearch } from '../../../../../assets/search.component';
 import { SvgSettings } from '../../../../../assets/settings.component';
 import { BtnComponent } from './btn/btn.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 interface linksInterface {
   label: string;
@@ -12,7 +13,15 @@ interface linksInterface {
 @Component({
   selector: 'app-navibar',
   standalone: true,
-  imports: [BtnComponent, SvgSearch, SvgSettings, CommonModule],
+  imports: [
+    BtnComponent,
+    SvgSearch,
+    SvgSettings,
+    CommonModule,
+    RouterLink,
+    RouterLinkActive,
+    RouterOutlet,
+  ],
   templateUrl: './navibar.component.html',
 })
 export class NavibarComponent {

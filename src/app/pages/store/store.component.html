@@ -1,14 +1,2 @@
-<app-navbar
-  class="flex h-14 items-center justify-center bg-bg p-2 px-4 pr-6 text-txt"
-/>
 <app-navibar class="flex justify-center bg-bg-tertiary p-2 px-3 text-txt" />
-<div class="bg-store flex h-[6600px] flex-col items-center gap-32">
-  <app-hero />
-  <div class="flex w-screen max-w-[1380px] flex-col items-center gap-16">
-    <!-- Featured -->
-    <app-featured class="w-full" />
-
-    <!-- Special Offers -->
-    <app-special-offer class="w-full" />
-  </div>
-</div>
+<router-outlet />

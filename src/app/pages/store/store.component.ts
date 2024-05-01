@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { games } from '../../Data/games';
 import { GameTypes } from '../../types/game';
@@ -15,11 +16,9 @@ import { SpecialOfferComponent } from './components/special-offer/special-offer.
   imports: [
     NavbarComponent,
     NavibarComponent,
-    HeroComponent,
-    FeaturedComponent,
     GameComponent,
     CommonModule,
-    SpecialOfferComponent,
+    RouterOutlet,
   ],
   templateUrl: './store.component.html',
 })

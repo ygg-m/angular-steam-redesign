@@ -32,6 +32,12 @@ export class BtnPageComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
+    if (this.router.url.includes(this.url)) {
+      this.selected = true;
+    } else {
+      this.selected = false;
+    }
+
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (this.router.url.includes(this.url)) {
