@@ -6,7 +6,7 @@ export interface Language {
 }
 
 export interface GameTypes {
-  // app_ID: number;
+  app_ID: number;
   // app_type: string;
   store_name: string;
   current_price: number;
@@ -80,6 +80,7 @@ export interface GameTypes {
 }
 
 export const GameInitializer = {
+  app_ID: 0,
   store_name: '',
   current_price: 0,
   full_price: 0,

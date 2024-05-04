@@ -6,8 +6,9 @@ import { PriceBtnComponent } from '../../../../../components/price-btn/price-btn
 import { WishlistBtnComponent } from '../../../../../components/wishlist-btn/wishlist-btn.component';
 import { TruncatePipe } from '../../../../../pipes/truncate.pipe';
 import { GameInitializer, GameTypes } from '../../../../../types/game';
-import { TagBtnComponent } from '../tag-btn/tag-btn.component';
 import { SshotComponent } from '../sshot/sshot.component';
+import { TagBtnComponent } from '../tag-btn/tag-btn.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -21,12 +22,14 @@ import { SshotComponent } from '../sshot/sshot.component';
     CommonModule,
     TruncatePipe,
     PriceBtnComponent,
+    RouterLink, RouterLinkActive, RouterOutlet
   ],
   templateUrl: './game.component.html',
 })
 export class GameComponent implements OnInit {
   @Input() data: GameTypes = GameInitializer;
   mainImageUrl: string = this.data.web_assets.capsule_616x353;
+  tagSlices: number = 3;
 
   ngOnInit(): void {
     this.mainImageUrl = this.data.web_assets.capsule_616x353;

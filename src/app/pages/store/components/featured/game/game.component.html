@@ -1,23 +1,51 @@
 <div
-  class="bg-bg p-4 w-full flex lg:flex-row flex-col gap-4 items-center rounded"
+  class="flex flex-col items-center gap-4 rounded bg-bg p-4 xl:w-full xl:flex-row"
 >
   <!-- Main Image -->
-  <div class="h-[458px] lg:w-7/12 w-full rounded overflow-hidden">
-    <img [src]="mainImageUrl" alt="" class="object-cover w-full h-full" />
-  </div>
+  <a
+    class="h-[514px] w-full overflow-hidden rounded xl:w-7/12"
+    routerLink="/store/game/{{ data.app_ID }}"
+    routerLinkActive="activebutton"
+    ariaCurrentWhenActive="page"
+  >
+    <img [src]="mainImageUrl" alt="" class="h-full w-full object-cover" />
+    ></a
+  >
 
   <!-- Game Info -->
-  <div class="lg:w-5/12 flex flex-col gap-4">
+  <div class="flex flex-col gap-4 xl:w-5/12">
     <!-- Title -->
-    <h2 class="text-2xl font-medium">{{ data.store_name }}</h2>
+    <h2
+      class="h-12 text-2xl font-bold leading-6"
+      style="
+        -webkit-box-orient: vertical;
+        display: block;
+        display: -webkit-box;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+      "
+    >
+      {{ data.store_name }}
+    </h2>
 
     <!-- Summary -->
-    <p class="max-h-12">
-      {{ data.description | truncate : 130 }}
+    <p
+      class="h-12"
+      style="
+        -webkit-box-orient: vertical;
+        display: block;
+        display: -webkit-box;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+      "
+    >
+      {{ data.description }}
     </p>
 
     <!-- ScreenShots -->
-    <div class="grid grid-cols-2">
+    <div class="grid aspect-auto grid-cols-2">
       <app-sshot
         *ngFor="let screenshotUrl of data.Assets.screenshots; let i = index"
         [url]="screenshotUrl"
@@ -29,14 +57,14 @@
     </div>
 
     <!-- Tags / Platform-->
-    <div class="flex justify-between items-center">
+    <div class="flex items-center justify-between">
       <!-- Tags -->
       <div class="flex gap-1">
         <app-tag-btn *ngFor="let tag of data.store_genres.slice(0, 3)">
           {{ tag }}
         </app-tag-btn>
         <button
-          class="text-txt-dim bg-bg-high p-2 hover:bg-bg-hover hover:text-txt duration-200 rounded"
+          class="rounded bg-bg-high p-2 text-txt-dim duration-200 hover:bg-bg-hover hover:text-txt"
         >
           <svg-add />
         </button>
@@ -44,7 +72,7 @@
 
       <!-- Platform -->
       <div class="flex items-center text-txt-dim">
-        <svg-windows8 class="w-6 h-6" />
+        <svg-windows8 class="h-6 w-6" />
       </div>
     </div>
 
@@ -52,9 +80,9 @@
     <div class="flex justify-between gap-4">
       <app-wishlist-btn />
       <div class="flex items-center gap-4">
-        <app-price-btn-sm [data]="data" />
+        <app-price-btn [data]="data" />
         <button
-          class="rounded bg-secondary p-2 px-6 hover:bg-acc-green duration-200 hover:text-bg"
+          class="h-full rounded bg-secondary p-2 px-6 duration-200 hover:bg-acc-green hover:text-bg"
         >
           Buy Now
         </button>

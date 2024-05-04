@@ -13,6 +13,7 @@ import { GameComponent } from './game/game.component';
 })
 export class FeaturedComponent implements OnDestroy {
   slides: GameTypes[] = games;
+
   currentSlideIndex = 0;
   fadeIn: boolean = false;
   private slideInterval: any;
@@ -31,7 +32,7 @@ export class FeaturedComponent implements OnDestroy {
       if (!this.isPaused) {
         this.timer -= 0.1;
         this.progress = Math.trunc(
-          100 - (this.timer / this.interval_time) * 100
+          100 - (this.timer / this.interval_time) * 100,
         );
 
         if (this.timer <= 0) {

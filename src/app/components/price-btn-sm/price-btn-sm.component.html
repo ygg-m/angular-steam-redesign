@@ -1,51 +1,51 @@
 <!-- Normal Price -->
 @if (data.current_price == data.full_price) {
-<div class="flex gap-4 items-center">
-  <div>
-    <p class="text-sm font-medium">$ {{ data.current_price }}</p>
+  <div class="flex items-center gap-4">
+    <div>
+      <p class="text-sm font-medium">$ {{ data.current_price }}</p>
+    </div>
   </div>
-</div>
 }
 
 <!-- Discount Price -->
 @if (data.current_price < data.full_price && data.discount_date == undefined) {
-<div class="flex gap-4 items-center">
-  <div class="p-2 px-4 bg-acc-green text-bg font-bold text-sm rounded">
-    -{{ discountValue }}%
-  </div>
-  <div class="flex flex-col">
-    <div class="text-bg-hover relative font-medium -mb-2">
-      <div
-        class="absolute top-0 bottom-0 m-auto h-[1px] w-full bg-bg-hover"
-      ></div>
-      $ {{ data.full_price }}
+  <div class="flex items-center gap-4">
+    <div class="rounded bg-acc-green p-2 px-4 text-sm font-bold text-bg">
+      -{{ discountValue }}%
     </div>
-    <div class="text-sm font-medium text-acc-green">
-      $ {{ data.current_price }}
+    <div class="flex flex-col">
+      <div class="relative -mb-2 font-medium text-bg-hover">
+        <div
+          class="absolute bottom-0 top-0 m-auto h-[1px] w-full bg-bg-hover"
+        ></div>
+        $ {{ data.full_price }}
+      </div>
+      <div class="text-sm font-medium text-acc-green">
+        $ {{ data.current_price }}
+      </div>
     </div>
   </div>
-</div>
 }
 
 <!-- Dated Discount Price -->
 @if (data.current_price < data.full_price && data.discount_date !== undefined) {
-<div class="flex gap-4 items-center">
-  <div class="text-txt-dim text-sm text-right">
-    <p>Until {{ data.discount_date | date : "LLL dd" }}</p>
-  </div>
-  <div class="p-2 px-4 bg-acc-green text-bg font-bold text-sm rounded">
-    -{{ discountValue }}%
-  </div>
-  <div class="flex flex-col">
-    <div class="text-bg-hover relative font-medium -mb-2">
-      <div
-        class="absolute top-0 bottom-0 m-auto h-[1px] w-full bg-bg-hover"
-      ></div>
-      $ {{ data.full_price }}
+  <div class="flex items-center gap-4">
+    <div class="text-right text-sm text-txt-dim">
+      <p>Until {{ data.discount_date | date: "LLL dd" }}</p>
     </div>
-    <div class="text-sm font-medium text-acc-green">
-      $ {{ data.current_price }}
+    <div class="rounded bg-acc-green p-2 px-4 text-sm font-bold text-bg">
+      -{{ discountValue }}%
+    </div>
+    <div class="flex flex-col">
+      <div class="relative -mb-2 font-medium text-bg-hover">
+        <div
+          class="absolute bottom-0 top-0 m-auto h-[1px] w-full bg-bg-hover"
+        ></div>
+        $ {{ data.full_price }}
+      </div>
+      <div class="text-sm font-medium text-acc-green">
+        $ {{ data.current_price }}
+      </div>
     </div>
   </div>
-</div>
 }

@@ -3,6 +3,7 @@ import { GameTypes } from '../types/game';
 export const games: GameTypes[] = [
   {
     store_name: 'Sekiro™: Shadows Die Twice - GOTY Edition',
+    app_ID: 814380,
     description:
       'Carve your own path to vengeance in the adventure from developer FromSoftware. Take Revenge. Restore Your Honor. Kill Ingeniously.',
     current_price: 29.99,
@@ -22,6 +23,7 @@ export const games: GameTypes[] = [
   },
   {
     store_name: 'Street Fighter™ 6',
+    app_ID: 1364780,
     description:
       "Here comes Capcom's newest challenger! Street Fighter™ 6 launches worldwide on June 2nd, 2023 and represents the next evolution of the Street Fighter™ series! Street Fighter 6 spans three distinct game modes, including World Tour, Fighting Ground and Battle Hub.",
     current_price: 39.59,
@@ -42,6 +44,7 @@ export const games: GameTypes[] = [
   },
   {
     store_name: 'Hollow Knight',
+    app_ID: 814380,
     description:
       'Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.',
     current_price: 14.99,
