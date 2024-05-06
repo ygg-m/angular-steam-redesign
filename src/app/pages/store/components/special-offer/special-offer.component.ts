@@ -13,7 +13,9 @@ import { GameComponent } from './game/game.component';
 })
 export class SpecialOfferComponent {
   slides: GameTypes[] = games;
-  currentSlideIndex = 0;
+  leftSlideIndex = 0;
+  midSlideIndex = 1;
+  rightSlideIndex = 2;
   fadeIn: boolean = false;
   private slideInterval: any;
   interval: any;
@@ -26,16 +28,12 @@ export class SpecialOfferComponent {
     this.startCountdown();
   }
 
-  log(e: any) {
-    console.log(e);
-  }
-
   startCountdown(): void {
     this.interval = setInterval(() => {
       if (!this.isPaused) {
         this.timer -= 0.1;
         this.progress = Math.trunc(
-          100 - (this.timer / this.interval_time) * 100
+          100 - (this.timer / this.interval_time) * 100,
         );
 
         if (this.timer <= 0) {
@@ -56,16 +54,23 @@ export class SpecialOfferComponent {
   changeSlide(prop: 'next' | 'prev' | number): void {
     switch (prop) {
       case 'next':
-        this.currentSlideIndex =
-          (this.currentSlideIndex + 1) % this.slides.length;
+        this.leftSlideIndex = (this.leftSlideIndex + 1) % this.slides.length;
+        this.midSlideIndex = (this.midSlideIndex + 1) % this.slides.length;
+        this.rightSlideIndex = (this.rightSlideIndex + 1) % this.slides.length;
         break;
       case 'prev':
-        this.currentSlideIndex =
-          (this.currentSlideIndex - 1 + this.slides.length) %
-          this.slides.length;
+        this.leftSlideIndex =
+          (this.leftSlideIndex - 1 + this.slides.length) % this.slides.length;
+        this.midSlideIndex =
+          (this.midSlideIndex - 1 + this.slides.length) % this.slides.length;
+        this.rightSlideIndex =
+          (this.rightSlideIndex - 1 + this.slides.length) % this.slides.length;
         break;
       default:
-        this.currentSlideIndex = prop;
+        this.leftSlideIndex =
+          (prop - 1 + this.slides.length) % this.slides.length;
+        this.midSlideIndex = prop;
+        this.rightSlideIndex = (prop + 1) % this.slides.length;
     }
 
     this.fadeIn = true;

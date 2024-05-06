@@ -1,21 +1,21 @@
 <div class="flex flex-col gap-8 px-8">
-  <div class="flex justify-between items-center">
+  <div class="flex items-center justify-between">
     <h3 class="text-lg font-medium">Special Offers</h3>
     <button
-      class="px-4 p-1 rounded border border-txt-dim text-txt-dim border-opacity-20 hover:bg-txt-dim hover:bg-opacity-10 duration-200"
+      class="rounded border border-txt-dim border-opacity-20 p-1 px-4 text-txt-dim duration-200 hover:bg-txt-dim hover:bg-opacity-10"
     >
       See More
     </button>
   </div>
   <!-- Caroussel -->
   <div
-    class="flex w-full bg-bg bg-opacity-20 py-4 rounded"
+    class="flex w-full rounded bg-bg bg-opacity-20 py-4"
     (mouseenter)="pauseCountdown()"
     (mouseleave)="pauseCountdown()"
   >
     <!-- Arrow Back -->
     <button
-      class="w-16 text-txt-dim hover:text-txt duration-200 flex justify-center items-center"
+      class="flex w-16 items-center justify-center text-txt-dim duration-200 hover:text-txt"
       title="Previous Slide"
       (click)="changeSlide('prev')"
     >
@@ -23,15 +23,15 @@
     </button>
 
     <!-- Content -->
-    <div class="flex gap-4">
-      <ng-container *ngFor="let slide of slides; let i = index">
-        <app-game class="w-full" [data]="slide" />
-      </ng-container>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <app-game class="w-full" [data]="slides[leftSlideIndex]" />
+      <app-game class="w-full" [data]="slides[midSlideIndex]" />
+      <app-game class="w-full" [data]="slides[rightSlideIndex]" />
     </div>
 
     <!-- Arrow Foward -->
     <button
-      class="w-16 rotate-180 text-txt-dim hover:text-txt duration-200"
+      class="w-16 rotate-180 text-txt-dim duration-200 hover:text-txt"
       title="Next Slide"
       (click)="changeSlide('next')"
     >
@@ -43,13 +43,13 @@
   <div class="flex w-full items-center justify-center gap-2">
     <ng-container *ngFor="let slide of slides; let i = index">
       <button
-        class="w-12 h-3 bg-bg rounded-full relative overflow-hidden"
+        class="relative h-3 w-12 overflow-hidden rounded-full bg-bg"
         (click)="changeSlide(i)"
       >
         <div
-          class="absolute top-0 h-full bg-secondary rounded-full"
+          class="absolute top-0 h-full rounded-full bg-secondary"
           style="width: {{ progress }}%"
-          [hidden]="i !== currentSlideIndex"
+          [hidden]="i !== leftSlideIndex"
         ></div></button
     ></ng-container>
   </div>
