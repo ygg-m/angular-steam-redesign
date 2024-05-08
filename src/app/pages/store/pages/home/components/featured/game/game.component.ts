@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { SvgAdd } from '../../../../../../assets/add.component';
-import { SvgWindows8 } from '../../../../../../assets/windows8.component';
-import { PriceBtnComponent } from '../../../../../components/price-btn/price-btn.component';
-import { WishlistBtnComponent } from '../../../../../components/wishlist-btn/wishlist-btn.component';
-import { TruncatePipe } from '../../../../../pipes/truncate.pipe';
-import { GameInitializer, GameTypes } from '../../../../../types/game';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { SvgAdd } from '@assets/add.component';
+import { SvgWindows8 } from '@assets/windows8.component';
+import { PriceBtnComponent } from '@components/price-btn/price-btn.component';
+import { WishlistBtnComponent } from '@components/wishlist-btn/wishlist-btn.component';
+import { TruncatePipe } from '@pipes/truncate.pipe';
+import { GameInitializer, GameTypes } from '@type/game';
 import { SshotComponent } from '../sshot/sshot.component';
 import { TagBtnComponent } from '../tag-btn/tag-btn.component';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -22,7 +22,9 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
     CommonModule,
     TruncatePipe,
     PriceBtnComponent,
-    RouterLink, RouterLinkActive, RouterOutlet
+    RouterLink,
+    RouterLinkActive,
+    RouterOutlet,
   ],
   templateUrl: './game.component.html',
 })

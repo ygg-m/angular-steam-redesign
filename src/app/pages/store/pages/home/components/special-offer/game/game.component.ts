@@ -1,9 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { SvgWindows8 } from '../../../../../../assets/windows8.component';
-import { PriceBtnSmComponent } from '../../../../../components/price-btn-sm/price-btn-sm.component';
-import { PriceBtnComponent } from '../../../../../components/price-btn/price-btn.component';
-import { WishlistBtnComponent } from '../../../../../components/wishlist-btn/wishlist-btn.component';
-import { GameInitializer, GameTypes } from '../../../../../types/game';
+import { SvgWindows8 } from '@assets/windows8.component';
+import { PriceBtnSmComponent } from '@components/price-btn-sm/price-btn-sm.component';
+import { WishlistBtnComponent } from '@components/wishlist-btn/wishlist-btn.component';
+import { GameInitializer, GameTypes } from '@type/game';
 
 @Component({
   selector: 'app-game',

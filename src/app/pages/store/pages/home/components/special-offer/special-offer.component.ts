@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { SvgChevron } from '../../../../../assets/chevron.component';
-import { games } from '../../../../Data/games';
-import { GameTypes } from '../../../../types/game';
+import { SvgChevron } from '@assets/chevron.component';
+import { games } from '@data/games';
+import { GameTypes } from '@type/game';
 import { GameComponent } from './game/game.component';
 
 @Component({

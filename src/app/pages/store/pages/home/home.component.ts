@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FeaturedComponent } from '../../components/featured/featured.component';
-import { HeroComponent } from '../../components/hero/hero.component';
-import { SpecialOfferComponent } from '../../components/special-offer/special-offer.component';
+import { FeaturedComponent } from './components/featured/featured.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { SpecialOfferComponent } from './components/special-offer/special-offer.component';
 
 @Component({
   selector: 'app-home',
