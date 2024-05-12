@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { GameInitializer, GameTypes } from '../../types/game';
 
 @Component({
@@ -8,19 +8,21 @@ import { GameInitializer, GameTypes } from '../../types/game';
   imports: [DatePipe],
   templateUrl: './price-btn-sm.component.html',
 })
-export class PriceBtnSmComponent implements OnInit {
+export class PriceBtnSmComponent implements OnChanges {
   @Input() data: GameTypes = GameInitializer;
   discountValue: number = 0;
 
-  ngOnInit(): void {
-    this.discountValue = this.calculateDiscount(
-      this.data.full_price,
-      this.data.current_price
-    );
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['data'] && changes['data'].currentValue) {
+      this.discountValue = this.calculateDiscount();
+    }
   }
 
-  calculateDiscount(originalPrice: number, discountedPrice: number): number {
-    const discount = originalPrice - discountedPrice;
+  calculateDiscount(): number {
+    const discount =
+      ((this.data.full_price - this.data.current_price) /
+        this.data.full_price) *
+      100;
     return Math.floor(discount);
   }
 }

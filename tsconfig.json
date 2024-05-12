@@ -27,7 +27,8 @@
       "@data/*": ["./src/app/data/*"],
       "@type/*": ["./src/app/types/*"],
       "@components/*": ["./src/app/components/*"],
-      "@pipes/*": ["./src/app/pipes/*"]
+      "@pipes/*": ["./src/app/pipes/*"],
+      "@env/*": ["./src/app/environment/*"]
     }
   },
   "angularCompilerOptions": {

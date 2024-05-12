@@ -2,7 +2,12 @@
 @if (data.current_price == data.full_price) {
   <div class="flex items-center gap-4">
     <div>
-      <p class="text-lg font-medium">$ {{ data.current_price }}</p>
+      <p
+        class="text-lg font-medium"
+        [class.text-txt-dim]="data.current_price === 0"
+      >
+        {{ data.current_price === 0 ? "Free" : "$ " + data.current_price }}
+      </p>
     </div>
   </div>
 } @else {

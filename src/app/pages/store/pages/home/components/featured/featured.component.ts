@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { SvgChevron } from '@assets/chevron.component';
-import { games } from '@data/games';
+import { gamesArray } from '@data/games';
 import { GameTypes } from '@type/game';
 import { GameComponent } from './game/game.component';
 
@@ -12,8 +12,7 @@ import { GameComponent } from './game/game.component';
   templateUrl: './featured.component.html',
 })
 export class FeaturedComponent implements OnDestroy {
-  slides: GameTypes[] = games;
-
+  @Input() slides: GameTypes[] = gamesArray;
   currentSlideIndex = 0;
   fadeIn: boolean = false;
   private slideInterval: any;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { env } from '@env/environment.development';
 import { FirebaseApp, initializeApp } from 'firebase/app';
-import { env } from '../environments/env.development';
 
 @Injectable({
   providedIn: 'root',

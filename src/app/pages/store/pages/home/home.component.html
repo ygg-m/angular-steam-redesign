@@ -2,9 +2,46 @@
   <app-hero />
   <div class="flex w-screen max-w-[1380px] flex-col items-center gap-16">
     <!-- Featured -->
-    <app-featured class="w-full" />
+    <app-featured [slides]="featuredSlides" class="w-full" />
 
     <!-- Special Offers -->
-    <app-special-offer class="w-full" />
+    <app-carousel
+      [title]="'Special Offers'"
+      [slides]="specialOfferSlides"
+      class="w-full"
+    />
+
+    <!-- Browse Steam -->
+    <!-- TODO -->
+
+    <!-- Free to Play -->
+    <app-carousel
+      [title]="'Free to Play'"
+      [slides]="freeToPlaySlides"
+      [buyButton]="true"
+      class="w-full"
+    />
+
+    <!-- Recently Updated -->
+    <!-- TODO -->
+
+    <!-- New & Trending -->
+    <app-carousel
+      [title]="'New & Trending'"
+      [slides]="newTrendingSlides"
+      class="w-full"
+    />
+
+    <!-- Top Sellers -->
+    <!-- TODO -->
+
+    <!-- Under $ 5 -->
+    <app-carousel
+      [title]="'Under $5'"
+      [slides]="underFiveSlides"
+      class="w-full"
+    />
+
+    <!-- Browser -->
   </div>
 </div>

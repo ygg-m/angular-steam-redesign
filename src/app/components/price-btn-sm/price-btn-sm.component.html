@@ -1,8 +1,13 @@
 <!-- Normal Price -->
-@if (data.current_price == data.full_price) {
+@if (data.current_price === data.full_price) {
   <div class="flex items-center gap-4">
     <div>
-      <p class="text-sm font-medium">$ {{ data.current_price }}</p>
+      <p
+        class="text-sm font-medium"
+        [class.text-txt-dim]="data.current_price === 0"
+      >
+        {{ data.current_price === 0 ? "Free" : "$ " + data.current_price }}
+      </p>
     </div>
   </div>
 }
@@ -16,12 +21,12 @@
     <div class="flex flex-col">
       <div class="relative -mb-2 font-medium text-bg-hover">
         <div
-          class="absolute bottom-0 top-0 m-auto h-[1px] w-full bg-bg-hover"
+          class="absolute bottom-0 top-0 m-auto h-[1px] w-full bg-bg-hover text-sm"
         ></div>
         $ {{ data.full_price }}
       </div>
       <div class="text-sm font-medium text-acc-green">
-        $ {{ data.current_price }}
+        {{ data.current_price === 0 ? "Free" : "$ " + data.current_price }}
       </div>
     </div>
   </div>
@@ -41,12 +46,12 @@
     <div class="flex flex-col">
       <div class="relative -mb-2 font-medium text-bg-hover">
         <div
-          class="absolute bottom-0 top-0 m-auto h-[1px] w-full bg-bg-hover"
+          class="absolute bottom-0 top-0 m-auto h-[1px] w-full bg-bg-hover text-sm"
         ></div>
         $ {{ data.full_price }}
       </div>
       <div class="text-sm font-medium text-acc-green">
-        $ {{ data.current_price }}
+        {{ data.current_price === 0 ? "Free" : "$ " + data.current_price }}
       </div>
     </div>
   </div>

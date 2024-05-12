@@ -1,7 +1,7 @@
 <button
   (mouseenter)="toggleIcon(true)"
   (mouseleave)="toggleIcon(false)"
-  class="flex gap-2 p-2 bg-bg-high hover:bg-bg-hover duration-200 rounded text-sm items-center"
+  class="flex h-full items-center gap-2 rounded bg-bg-high p-2 px-4 text-sm duration-200 hover:bg-bg-hover"
 >
   {{ icon ? "" : "Wishlist" }}
   <svg-favorite-border *ngIf="!fillIcon" />

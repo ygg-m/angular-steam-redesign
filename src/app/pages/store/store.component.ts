@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { games } from '../../data/games';
+import { gamesArray } from '../../data/games';
 import { GameTypes } from '../../types/game';
 import { NavibarComponent } from './components/navibar/navibar.component';
 
@@ -13,5 +13,5 @@ import { NavibarComponent } from './components/navibar/navibar.component';
   templateUrl: './store.component.html',
 })
 export class StoreComponent {
-  featuredSlides: GameTypes[] = [...games];
+  featuredSlides: GameTypes[] = [...gamesArray];
 }
