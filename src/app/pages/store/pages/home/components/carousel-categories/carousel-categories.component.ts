@@ -1,6 +1,6 @@
 import { categories } from '@/data/categories';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { SvgChevron } from '@assets/chevron.component';
 import { CategoryComponent } from './category/category.component';
 
@@ -17,8 +17,13 @@ export class CarouselCategoriesComponent implements OnInit {
   fadeIn: boolean = false;
   jumpIndex: number = 1;
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.divideArrayByWindowSize();
+  }
+
   ngOnInit(): void {
-    this.slides = this.divideArrayIntoGroups(categories, 5);
+    this.divideArrayByWindowSize();
   }
 
   changeSlide(prop: 'next' | 'prev' | number): void {
@@ -31,6 +36,24 @@ export class CarouselCategoriesComponent implements OnInit {
         break;
       default:
         this.jumpToSlide(prop);
+    }
+  }
+
+  divideArrayByWindowSize() {
+    if (window.innerWidth > 1280) {
+      this.slides = this.divideArrayIntoGroups(categories, 5);
+    }
+
+    if (window.innerWidth < 1280) {
+      this.slides = this.divideArrayIntoGroups(categories, 4);
+    }
+
+    if (window.innerWidth < 1024) {
+      this.slides = this.divideArrayIntoGroups(categories, 3);
+    }
+
+    if (window.innerWidth < 640) {
+      this.slides = this.divideArrayIntoGroups(categories, 2);
     }
   }
 
