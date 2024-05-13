@@ -7,7 +7,7 @@ import { FeaturedComponent } from './components/featured/featured.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { StreamingComponent } from './components/streaming/streaming.component';
 import { TopSellersComponent } from './components/top-sellers/top-sellers.component';
-import { UpdatesComponent } from './components/updates/updates.component';
+import { NewsComponent } from './components/news/news.component';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +17,7 @@ import { UpdatesComponent } from './components/updates/updates.component';
     FeaturedComponent,
     CarouselComponent,
     CarouselCategoriesComponent,
-    UpdatesComponent,
+    NewsComponent,
     TopSellersComponent,
     StreamingComponent,
   ],

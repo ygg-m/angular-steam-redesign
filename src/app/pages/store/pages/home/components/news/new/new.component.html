@@ -1,0 +1,38 @@
+<div class="flex w-full max-w-72 flex-col gap-4 rounded bg-bg p-3">
+  <!-- Image -->
+  <div class="h-40 overflow-hidden rounded">
+    <img [src]="cover" [alt]="data.title" class="h-full w-full object-cover" />
+  </div>
+
+  <!-- Title -->
+  <h2 class="h-14 text-xl font-medium">{{ game.store_name }}</h2>
+
+  <!-- Description -->
+  <p
+    class="h-[4.5rem]"
+    style="
+      -webkit-box-orient: vertical;
+      display: block;
+      display: -webkit-box;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 3;
+    "
+  >
+    {{ data.description }}
+  </p>
+
+  <!-- Buttons -->
+  <div class="flex w-full gap-2">
+    <div
+      class="flex w-full items-center justify-center rounded border border-bg-hover p-2 text-txt-dim"
+    >
+      In Wishlist
+    </div>
+    <button
+      class="w-full rounded bg-bg-high p-2 duration-200 hover:bg-bg-hover"
+    >
+      View Updates
+    </button>
+  </div>
+</div>

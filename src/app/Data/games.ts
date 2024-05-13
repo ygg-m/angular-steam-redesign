@@ -18,6 +18,21 @@ function createScreenshotPaths(id: number, NumOfImages: number): string[] {
   return screenshots;
 }
 
+export const gameInit = {
+  store_name: '',
+  app_ID: 0,
+  description: '',
+  current_price: 0,
+  full_price: 0,
+  store_genres: [],
+  web_assets: {
+    capsule_616x353: '',
+  },
+  Assets: {
+    screenshots: [],
+  },
+};
+
 export const gamesArray: GameTypes[] = [
   {
     store_name: 'Sekiro™: Shadows Die Twice - GOTY Edition',
@@ -122,23 +137,7 @@ export const gamesArray: GameTypes[] = [
       capsule_616x353: '../../assets/games/271590/capsule_616x353.jpg',
     },
     Assets: {
-      screenshots: [
-        '../../../../../../assets/games/271590/ss_00.jpg',
-        '../../../../../../assets/games/271590/ss_01.jpg',
-        '../../../../../../assets/games/271590/ss_02.jpg',
-        '../../../../../../assets/games/271590/ss_03.jpg',
-        '../../../../../../assets/games/271590/ss_05.jpg',
-        '../../../../../../assets/games/271590/ss_06.jpg',
-        '../../../../../../assets/games/271590/ss_07.jpg',
-        '../../../../../../assets/games/271590/ss_08.jpg',
-        '../../../../../../assets/games/271590/ss_09.jpg',
-        '../../../../../../assets/games/271590/ss_10.jpg',
-        '../../../../../../assets/games/271590/ss_11.jpg',
-        '../../../../../../assets/games/271590/ss_12.jpg',
-        '../../../../../../assets/games/271590/ss_13.jpg',
-        '../../../../../../assets/games/271590/ss_14.jpg',
-        '../../../../../../assets/games/271590/ss_15.jpg',
-      ],
+      screenshots: createScreenshotPaths(814380, 14),
     },
   },
   {

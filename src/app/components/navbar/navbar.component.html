@@ -1,27 +1,27 @@
-<div class="flex justify-between items-center w-full z-10">
+<div class="z-10 flex w-full items-center justify-between">
   <!-- Left Part -->
   <div class="flex">
     <div class="flex gap-4">
       <!-- Navigate Buttons -->
-      <div class="xl:flex hidden text-txt-dim items-center justify-center">
-        <button class="w-8 h-8 hover:text-txt duration-200">
+      <div class="hidden items-center justify-center text-txt-dim xl:flex">
+        <button class="h-8 w-8 duration-200 hover:text-txt">
           <svg-chevron class="" />
         </button>
 
-        <button class="w-8 h-8 hover:text-txt rotate-180 duration-200">
+        <button class="h-8 w-8 rotate-180 duration-200 hover:text-txt">
           <svg-chevron class="" />
         </button>
       </div>
 
       <!-- Steam Logo -->
-      <a href="#" class="flex gap-2 items-center justify-center">
+      <a href="#" class="flex items-center justify-center gap-2">
         <app-steam-icon class="w-[20px]" />
         <app-steam-font class="w-[59px]" />
       </a>
     </div>
 
     <!-- Menu -->
-    <app-menu class="xl:flex gap-8 pl-16 items-center justify-center hidden" />
+    <app-menu class="hidden items-center justify-center gap-8 pl-16 xl:flex" />
   </div>
 
   <!-- Right Part -->
@@ -36,12 +36,12 @@
     <app-profile class="relative hidden sm:flex" />
 
     <!-- Help / View Buttons -->
-    <div class="pl-8 md:flex items-center justify-center hidden">
-      <button class="text-txt-dim hover:text-txt h-full px-2 duration-200">
+    <div class="hidden items-center justify-center pl-8 md:flex">
+      <button class="h-full px-2 text-txt-dim duration-200 hover:text-txt">
         Help
       </button>
       <button
-        class="text-txt-dim hover:text-txt h-full px-4 flex gap-1 items-center justify-center duration-200"
+        class="flex h-full items-center justify-center gap-1 px-4 text-txt-dim duration-200 hover:text-txt"
       >
         View
         <span class="w-5 -rotate-90"><svg-chevron /></span>
@@ -49,14 +49,14 @@
     </div>
 
     <!-- Window Buttons -->
-    <app-btns-windows class="items-center justify-center hidden 2xl:flex" />
+    <app-btns-windows class="hidden items-center justify-center 2xl:flex" />
 
     <!-- Mobile Button -->
     <div
       class="flex items-center justify-center xl:hidden"
       (click)="toggleMobileMenu()"
     >
-      <button class="w-8 h-8 px-4 box-content">
+      <button class="box-content h-8 w-8 px-4">
         <svg-menu />
       </button>
     </div>
@@ -65,7 +65,7 @@
 
 <!-- Menu -->
 <app-menu-mobile
-  class="absolute w-screen h-screen top-0 right-0 backdrop-blur bg-bg flex justify-end bg-opacity-75"
+  class="absolute right-0 top-0 flex h-screen w-screen justify-end bg-bg bg-opacity-75 backdrop-blur"
   [class.hidden]="hideMobileMenu"
   [class.slide-in-right]="showMobileMenu"
   [class.slide-out-right]="!showMobileMenu"
