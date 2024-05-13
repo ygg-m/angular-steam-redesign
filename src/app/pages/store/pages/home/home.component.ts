@@ -1,14 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { gamesArray } from '@data/games';
 import { GameTypes } from '@type/game';
+import { CarouselCategoriesComponent } from './components/carousel-categories/carousel-categories.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FeaturedComponent } from './components/featured/featured.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { StreamingComponent } from './components/streaming/streaming.component';
+import { TopSellersComponent } from './components/top-sellers/top-sellers.component';
+import { UpdatesComponent } from './components/updates/updates.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeroComponent, FeaturedComponent, CarouselComponent],
+  imports: [
+    HeroComponent,
+    FeaturedComponent,
+    CarouselComponent,
+    CarouselCategoriesComponent,
+    UpdatesComponent,
+    TopSellersComponent,
+    StreamingComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

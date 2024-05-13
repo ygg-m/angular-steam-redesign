@@ -1,0 +1,30 @@
+<a
+  class="group relative z-0 flex w-full flex-col gap-4 overflow-hidden rounded bg-bg"
+  routerLink="browse/category/{{ data.url }}"
+  routerLinkActive="activebutton"
+  ariaCurrentWhenActive="page"
+>
+  <p
+    class="absolute left-0 top-0 z-20 flex h-full w-full items-center justify-center text-xl font-medium backdrop-blur-[2px] group-hover:backdrop-blur-none"
+    style="
+      text-shadow:
+        1px 1px 5px black,
+        1px 1px 2px black;
+    "
+  >
+    {{ data.label }}
+  </p>
+  <div
+    class="absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-gradient-to-t opacity-60 duration-200 group-hover:opacity-100"
+    style="
+      --tw-gradient-from: rgb({{ data.rgb }});
+      --tw-gradient-to: rgba({{ data.rgb }}, 0.1);
+      --tw-gradient-stops: rgb({{ data.rgb }}), rgba({{ data.rgb }}, 0.1);
+    "
+  ></div>
+  <img
+    src="{{ data.image }}"
+    alt=""
+    class="opacity-60 duration-200 group-hover:opacity-100"
+  />
+</a>

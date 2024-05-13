@@ -32,6 +32,13 @@ export const routes: Routes = [
         path: 'browse',
         component: BrowseComponent,
         title: 'Steam - Browse',
+        children: [
+          {
+            path: 'category/:categoryId',
+            component: BrowseComponent,
+            title: 'Steam - Category',
+          },
+        ],
       },
       {
         path: 'discover',
